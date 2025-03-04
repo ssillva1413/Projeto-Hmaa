@@ -1,10 +1,13 @@
 import React from "react"
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
+import { Link } from "react-router-dom"
+import HeaderInfo from "../../components/HeaderInfo"
 
 function Home () {
     return(
         <>
+        <HeaderInfo />
     <Header />
     <section className='container'>
       <div className='apresentacao'>
@@ -17,9 +20,9 @@ function Home () {
       onde você se sente acolhido desde <br />  
       o primeiro momento.
       </p>
-      <button className='btn btn-color'>
+      <Link to='/sobre' className='btn btn-color'>
         Saiba mais
-      </button>
+      </Link>
       </div>
       <figure>
         <img className='img-home' src="/banner1.jpg" alt='imagem de banner'/>
