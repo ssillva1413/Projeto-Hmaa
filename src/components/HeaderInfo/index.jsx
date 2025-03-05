@@ -12,7 +12,7 @@ function HeaderInfo() {
         <span>(88) 1234-5678</span>
         <span className={styles.whatsapp}>
         <FaWhatsapp className={styles.icon} />
-        <a href="https://wa.me/SEU_NUMERO_DE_TELEFONE" className={styles.wpp} target="_blank" rel="noopener noreferrer">
+        <a href="https://wa.me/5588988724728" className={styles.wpp} target="_blank" rel="noopener noreferrer">
           (88)98872-4728
         </a>
       </span>
@@ -21,10 +21,10 @@ function HeaderInfo() {
         <a href="https://www.facebook.com/HospitalAgenorAraujo" target="_blank" rel="noopener noreferrer">
           <FaFacebookF className={styles.icon} />
         </a>
-        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/hosp_agenoraraujo" target="_blank" rel="noopener noreferrer">
           <FaInstagram className={styles.icon} />
         </a>
-        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/company/hospital-agenor-araujo/" target="_blank" rel="noopener noreferrer">
           <FaLinkedin className={styles.icon} />
         </a>
       </div>

@@ -1,0 +1,53 @@
+/* css da home*/
+
+.home {
+    width: 100%;
+    min-height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    overflow: hidden;
+}
+.home h1{
+    font-size: 2.2rem;
+    color: #01793F;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  
+
+}
+.home p{
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+   
+}
+.btn{
+    width: 250px;
+    height: 50px;
+    font-size: 1.125rem;
+    font-weight: bold;
+    border: 0;
+    border-radius: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+
+
+}
+
+.btn_color{
+    background-color:#01793F;
+    color: white;
+}
+
+.btn_color:hover{
+    background-color: #BE3638;
+}
+.img-home{
+  border-radius: 1px;
+}

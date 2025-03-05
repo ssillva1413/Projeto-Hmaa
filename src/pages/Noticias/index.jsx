@@ -1,23 +1,20 @@
+import Header from "../../components/Header";
 import Footer from "../../components/Footer"
-import Header from "../../components/Header"
 import Container from "../../components/Container"
 import HeaderInfo from "../../components/HeaderInfo"
 
-function Cartao (){
+function Noticias (){
     return (
-        
         <>
           <HeaderInfo />
         <Header />
-       <Container>
-       <h2> 
-            Cartão
+        <Container>
+        <h2>
+            Noticias
         </h2>
-
-       </Container>
+        </Container>
         <Footer />
-
         </>
     )
 }
-export default Cartao
+export default Noticias

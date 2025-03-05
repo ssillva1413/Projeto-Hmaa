@@ -14,11 +14,11 @@
   }
   
   .header a {
-    margin: 0 1rem;
+    margin: 0.8rem;
     color: white;
     text-decoration: none;
-    padding-right: 1rem;
-    font-size: 1.120rem;
+    padding-right: 0.1rem;
+    font-size: 1rem;
   }
   .header a:hover{
     color:#BE3638;

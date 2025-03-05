@@ -14,6 +14,7 @@ function Header() {
 
        
         <Link to ='/'>Home</Link>
+        <Link to ='/noticias'>Noticias</Link>
         <Link to ='/sobre'>Sobre</Link>
         <Link to ='/especialidades'>Especialidades</Link>
         <Link to ='/projetos'>Projetos</Link>

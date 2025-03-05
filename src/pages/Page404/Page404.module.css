@@ -1,0 +1,21 @@
+.titulo2{
+    color:#01793F;
+    padding-top: 2rem;
+  
+}
+.erro{
+    font-size: 200px;
+    color: black;
+    font-weight: bold;
+    
+}
+.voltar{
+        color:#01793F;
+
+}
+.texto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
