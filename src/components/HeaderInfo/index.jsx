@@ -9,7 +9,7 @@ function HeaderInfo() {
     <div className={styles.headerInfo}>
       <div className={styles.contatos}>
         <FaPhoneAlt className={styles.icon} />
-        <span>(88) 1234-5678</span>
+        <span>(88) 3581-0011</span>
         <span className={styles.whatsapp}>
         <FaWhatsapp className={styles.icon} />
         <a href="https://wa.me/5588988724728" className={styles.wpp} target="_blank" rel="noopener noreferrer">
