@@ -10,10 +10,10 @@ function Sobre (){
           <div className={style.bio}>
             <img src={hmaa} alt="hmaa" className={style.hmaa} />
             <div className={style.textos}>
-            <h1>Conheça a nossa história</h1>
+            <h2>Conheça a nossa história</h2>
             
           <p>
-          O Hospital e Maternidade Dr. Agenor Araújo foi fundado em 18 <br />
+            O Hospital e Maternidade Dr. Agenor Araújo foi fundado em 18 <br />
           de abril de 1948 pela Associação Iguatuense de Assistência <br />
           Social e de Proteção à Maternidade e à Infância. Localizado em <br />
           Iguatu, Ceará, o hospital é uma entidade filantrópica <br />
@@ -21,7 +21,7 @@ function Sobre (){
           Assistência Social (CEBAS).
           </p>
           <p>
-          Atualmente, o hospital é referência em cirurgias eletivas e <br />
+            Atualmente, o hospital é referência em cirurgias eletivas e <br />
           internação clínica, oferecendo diversas especialidades <br />
           médicas. Em novembro de 2022, inaugurou o Anexo Hospital <br />
           Dia, ampliando sua capacidade de atendimento em até 70%. <br />
@@ -30,7 +30,7 @@ function Sobre (){
           consultas, exames e cirurgias. <br />
           </p>
           <p>
-          Com uma equipe dedicada e múltiplas especialidades, o Hospital <br />
+            Com uma equipe dedicada e múltiplas especialidades, o Hospital <br />
           e Maternidade Dr. Agenor Araújo já transformou a vida de muitos <br />
           pacientes através de cirurgias e atendimentos de qualidade. <br />
           </p>
