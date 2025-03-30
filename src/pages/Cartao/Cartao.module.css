@@ -1,0 +1,162 @@
+.agenda {
+  padding: 20px;
+  text-align: center;
+}
+
+.titulo {
+  font-size: 2rem;
+  color: #007b3e;
+  margin-bottom: 20px;
+}
+
+.lista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #f4f4f9;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 370px;
+  height: 420px;
+  transition: transform 0.3s ease-in-out;
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cardTitulo {
+  font-size: 1.2rem; /* Diminuído o tamanho */
+  color: #007b3e;
+  text-align: center; /* Centraliza o título */
+  width: 100%; /* Garante que o título ocupe toda a largura */
+  margin-bottom: 8px; /* Ajuste do espaçamento inferior */
+}
+
+.profissionaisLista {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.profissionalItem {
+  display: flex;
+  align-items: center; /* Centraliza imagem e nome na mesma linha */
+  gap: 10px; /* Espaço entre a imagem e o texto */
+  padding: 3px 0;
+}
+
+.imagemContainer {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  align-items: center;
+}
+
+.textoProfissional {
+  display: flex;
+  flex-direction: row; /* Mantém nome e especialidade na mesma linha */
+  align-items: center; /* Alinha verticalmente */
+  gap: 8px; /* Espaço entre nome e especialidade */
+}
+
+.nome {
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.especialidade {
+  font-size: 0.9rem;
+  color: #007b3e;
+}
+
+.sobreClinica {
+  padding: 20px;
+}
+
+.sobreClinica h2 {
+  font-size: 2rem;
+  color: #007b3e;
+  margin-bottom: 10px; /* Espaço entre o título e o conteúdo */
+  text-align: center; /* Centraliza o título */
+}
+
+.sobreClinicaContent {
+  display: flex; /* Coloca a imagem e o texto lado a lado */
+  flex-direction: row; /* Imagem à esquerda e texto à direita */
+  align-items: center; /* Alinha verticalmente no centro */
+  gap: 20px; /* Espaço entre a imagem e o texto */
+}
+
+.sobreClinica img {
+  width: 40%;  /* Tamanho da imagem */
+  height: auto;
+  border-radius: 10px;
+}
+
+.sobreClinica p {
+  width: 55%; /* Ajuste a largura do texto */
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  text-align: left; /* Alinha o texto à esquerda */
+}
+
+/* Estilo para a seção "Nosso Cartão" */
+.cartao {
+  padding: 20px;
+}
+
+.cartao h2 {
+  font-size: 2rem;
+  color: #007b3e;
+  margin-bottom: 10px; /* Espaço entre o título e o conteúdo */
+  text-align: center; /* Centraliza o título */
+}
+
+.cartaoContent {
+  display: flex; /* Coloca a imagem e o texto lado a lado */
+  flex-direction: row; /* Coloca o texto à esquerda e a imagem à direita */
+  align-items: center; /* Alinha verticalmente no centro */
+  gap: 20px; /* Espaço entre a imagem e o texto */
+}
+
+.cartao img {
+  width: 40%;  /* Tamanho da imagem */
+  height: auto;
+  border-radius: 10px;
+}
+
+.cartao p {
+  width: 55%; /* Ajuste a largura do texto */
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  text-align: left; /* Alinha o texto à esquerda */
+}
