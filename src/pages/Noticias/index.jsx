@@ -29,41 +29,16 @@ function Noticias() {
       texto: "A SC Medical estará presente na 27ª edição da Hospitalar...",
     },
   ];
-
-  <div className="flex flex-col lg:flex-row gap-8 px-8 mt-10">
-  {/* Notícias */}
-  <div className="w-full lg:w-3/4 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
-    {noticias.map((noticia) => (
-      <NewsCard
-        key={noticia.id}
-        imagem={noticia.imagem}
-        titulo={noticia.titulo}
-        data={noticia.data}
-        texto={noticia.texto}
-        link={noticia.link}
-      />
-    ))}
-  </div>
-
-  {/* Texto institucional ao lado */}
-  <div className="w-full lg:w-1/4">
-    <h2 className="text-2xl font-bold text-red-700 mb-2">Nossa História</h2>
-    <div className="h-1 w-16 bg-red-700 mb-4"></div>
-    <p className="font-semibold mb-2">Valorizamos a história que nos trouxe até aqui!</p>
-    <p className="text-sm text-gray-700 mb-2">
-      A SC Medical nasceu em junho de 2010 para atuar na área médico-hospitalar como representante...
-    </p>
-    <p className="text-sm text-gray-700 mb-2">
-      Com 14 anos de atuação no setor, a empresa deu um importante passo em 2023 ao lançar...
-    </p>
-    <p className="text-sm text-gray-700 mb-2">
-      Desde 2019, é representante exclusiva da marca Vinno...
-    </p>
-    <p className="text-sm text-gray-700">
-      Também comercializa eletrocardiógrafos, monitores, oxímetros e outros equipamentos...
-    </p>
-  </div>
-</div>
+  return (
+    <div className={styles.container}>
+      <h1>Últimas Notícias</h1>
+      <div className={styles.grid}>
+        {noticias.map((item, index) => (
+          <NewsCard key={index} {...item} />
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default Noticias;

@@ -8,25 +8,23 @@ function HeaderInfo() {
   return (
     <div className={styles.headerInfo}>
       <div className={styles.contatos}>
-        <FaPhoneAlt className={styles.icon} />
-        <span>(88) 3581-0011</span>
+       
         <span className={styles.whatsapp}>
-        <FaWhatsapp className={styles.icon} />
+       
         <a href="https://wa.me/5588988724728" className={styles.wpp} target="_blank" rel="noopener noreferrer">
-          (88)98872-4728
+          Entre em contato: (88)98872-4728 
         </a>
       </span>
       </div>
       <div className={styles.socialMedia}>
+         Siga nossas redes sociais:
         <a href="https://www.facebook.com/HospitalAgenorAraujo" target="_blank" rel="noopener noreferrer">
           <FaFacebookF className={styles.icon} />
         </a>
         <a href="https://www.instagram.com/hosp_agenoraraujo" target="_blank" rel="noopener noreferrer">
           <FaInstagram className={styles.icon} />
         </a>
-        <a href="https://www.linkedin.com/company/hospital-agenor-araujo/" target="_blank" rel="noopener noreferrer">
-          <FaLinkedin className={styles.icon} />
-        </a>
+        
       </div>
     </div>
   );
