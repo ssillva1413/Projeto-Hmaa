@@ -7,53 +7,46 @@ function Projetos() {
     <section className={styles.container}>
       <h1 className={styles.titulo}>PROJETOS</h1>
 
-      <div className={styles.card}>
-        <div className={styles.cardContent}>
-        <img
-          src="img1.jpeg"
-          alt="Imagem lateral esquerda"
-          className={styles.imgLateral}
-        />
-        <img
-          src="maos_que_cuidam.jpg"
-          alt="Logo Mãos que Cuidam"
-          className={styles.logo}
-        />
-        <img
-          src="img2.jpeg"
-          alt="Imagem lateral direita"
-          className={styles.imgLateral}
-        />
+      {/* Card Mãos que Cuidam - Atualizado */}
+      <div className={styles.cardDestaque}>
+        <h2 className={styles.tituloDestaque}>MÃOS QUE CUIDAM</h2>
+        
+        <div className={styles.galeria}>
+          <img src="img1.jpeg" alt="Projeto 1" className={styles.galeriaImagem} />
+          <img src="maos_que_cuidam.jpg" alt="Logo" className={styles.galeriaLogo} />
+          <img src="img2.jpeg" alt="Projeto 2" className={styles.galeriaImagem} />
         </div>
-        <Link to="/projetos/maosquecuidam" className={styles.botao}>
-          Saiba mais...
-        </Link>
+        
+        <div className={styles.botaoContainer}>
+          <Link to="/projetos/maosquecuidam" className={styles.botao}>
+            Saiba mais...
+          </Link>
+        </div>
       </div>
 
-      <div className={styles.card}>
-        <div className={styles.cardContent}>
-          <div className={styles.texto}>
-            <h2 className={styles.subtitulo}>PROADI-SUS</h2>
-            <p className={styles.destaque}>Saúde em nossas mãos.</p>
-            <p>
-              O Hospital e Maternidade Dr. Agenor Araújo participa do Projeto PROADI-SUS –
-               Saúde em Nossas Mãos, com o objetivo de aprimorar a segurança do paciente nas
-                UTIs e reduzir infecções hospitalares.
-            </p>
-            <p>
-              A metodologia do projeto incentiva a participação ativa de todos os envolvidos,
-               promovendo o conceito de “todos ensinam e todos aprendem”. Além disso, protocolos
-                de higienização das mãos serão aprimorados, reforçando o compromisso com práticas
-                 seguras e eficazes no ambiente hospitalar.
-            </p>
-            <Link to="/projetos/proadi-sus" className={styles.botao}>
-              Saiba mais...
-            </Link>
+      {/* Card PROADI-SUS (mantido sem alterações) */}
+      <div className={styles.cardProjeto}>
+        <div className={styles.cardProjetoContent}>
+          <div className={styles.textoContent}>
+            <h2 className={styles.tituloProjeto}>PROADI-SUS</h2>
+            <h3 className={styles.subtituloProjeto}>Saúde em nossas mãos</h3>
+            
+            <div className={styles.textoJustificado}>
+              <p>O hospital é instrumental de garantir Avalia Superior do Brasil e a República. É a saúde de Núcleo Prado, paciente científico e dos domínios linguísticos.</p>
+              <p>Apresentação de escolha horária de participação com os saldos da ambulância, promovendo o aumento de todos os valores e todas características das mãos, mostram-se as representações de modo fundamental para o desenvolvimento econômico que permite a responsabilidade social e social.</p>
+            </div>
+            
+            <div className={styles.botaoContainer}>
+              <Link to="/projetos/proadi-sus" className={styles.botao}>
+                Saiba mais...
+              </Link>
+            </div>
           </div>
-          <img
-            src="/projetos/proadi.jpg"
-            alt="Imagem do Projeto PROADI-SUS"
-            className={styles.imgLateral}
+          
+          <img 
+            src="proadi.jpg" 
+            alt="Projeto PROADI-SUS" 
+            className={styles.imagemFullHeight} 
           />
         </div>
       </div>

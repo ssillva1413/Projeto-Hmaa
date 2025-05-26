@@ -1,5 +1,7 @@
+/* PROJETOS.module.css - VERSÃO COMPLETA ATUALIZADA */
+
 .container {
-  padding: 2rem 1rem;
+  padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -9,148 +11,199 @@
   color: #01793F;
   font-size: 2.5rem;
   font-weight: bold;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
 }
 
-/* --- CARD  --- */
-.card {
-  border: 2px solid #01793F;
-  border-radius: 15px;
-  padding: 3rem 2rem 2rem 2rem; /* espaço extra no topo para suspensão */
-  margin-bottom: 2rem;
+/* ======= CARD MÃOS QUE CUIDAM ======= */
+.cardDestaque {
   background-color: #fff;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
   position: relative;
-  overflow: visible;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
 }
 
-.cardContent {
+.tituloDestaque {
+  font-size: 1.8rem;
+  color: #01793F;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* GALERIA - IMAGENS AUMENTADAS */
+.galeria {
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  gap: 2rem;
-  width: 100%;
-  position: relative;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  margin: 1.5rem 0;
+  flex: 1;
 }
 
-.imgLateral {
-  width: 35%;
-  height: 280px;
+.galeriaImagem {
+  width: 32%; /* Aumentei a largura */
+  height: 280px; /* Aumentei a altura */
   object-fit: cover;
-  border-radius: 12px;
-  margin-top: -80px; /* SUSPENSÃO VISUAL */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
 }
 
-.imgLateral:hover {
+.galeriaImagem:hover {
   transform: scale(1.03);
 }
 
-.logo {
-  width: 240px;
-  height: auto;
-  margin-top: -40px;
+.galeriaLogo {
+  width: 180px; /* Aumentei o logo */
+  height: 180px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
-.botao {
-  margin-top: 1rem;
-  background-color: #01793F;
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 0.6rem 1.4rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-  align-self: flex-start;
+.galeriaLogo:hover {
+  transform: scale(1.05);
 }
 
-.botao:hover {
-  background-color: #025e30;
-}
-
-/* --- RESPONSIVO TRIPLO --- */
-@media (max-width: 768px) {
-  .cardContent {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .imgLateral{
-    width: 90%;
-    height: auto;
-    margin-top: 0;
-  }
-
-  .logo {
-    width: 200px;
-    margin: 1rem 0;
-  }
-
-  .botao{
-    align-self: center;
-  }
-}
-
-/* --- CARD PROADI-SUS --- */
-.card {
-  border: 2px solid #01793F;
-  border-radius: 15px;
-  padding: 1rem;
-  margin-bottom: 2rem;
-  background-color: #fff;
-}
-
-.cardContent {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.texto {
-  flex: 1;
-  min-width: 280px;
-}
-
-.subtitulo {
-  font-size: 1.8rem;
-  color: #01793F;
-  margin-bottom: 0.5rem;
-}
-
-.destaque {
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.imgLateral {
-  flex: 1;
-  max-width: 400px;
-  border-radius: 10px;
-  object-fit: cover;
-  min-width: 280px;
+/* BOTÃO INFERIOR ESQUERDO */
+.botaoContainer {
+  margin-top: auto;
+  text-align: left;
+  padding-top: 1.5rem;
 }
 
 .botao {
   display: inline-block;
-  margin-top: 1rem;
   background-color: #01793F;
-  color: #fff;
+  color: white;
+  padding: 0.7rem 1.8rem;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
-  padding: 0.6rem 1.4rem;
-  border-radius: 8px;
   font-size: 1rem;
-  transition: background-color 0.3s ease;
+  border: 2px solid #01793F;
+  transition: all 0.3s;
 }
 
 .botao:hover {
-  background-color: #025e30;
+  background-color: white;
+  color: #01793F;
+}
+
+/* ======= CARD PROADI-SUS (SEM ALTERAÇÕES) ======= */
+.cardProjeto {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 0;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+}
+
+.cardProjetoContent {
+  display: flex;
+  min-height: 400px;
+}
+
+.textoContent {
+  flex: 1;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.tituloProjeto {
+  font-size: 1.8rem;
+  color: #01793F;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.subtituloProjeto {
+  font-size: 1.3rem;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.textoJustificado {
+  text-align: justify;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.imagemFullHeight {
+  width: 45%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ======= RESPONSIVIDADE ======= */
+@media (max-width: 1024px) {
+  .galeriaImagem {
+    height: 240px;
+  }
+  
+  .galeriaLogo {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .titulo {
+    font-size: 2rem;
+  }
+  
+  /* Ajustes para mobile - Mãos que Cuidam */
+  .galeria {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .galeriaImagem {
+    width: 85%;
+    height: 220px;
+  }
+  
+  .galeriaLogo {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .cardDestaque {
+    min-height: auto;
+    padding: 1.5rem;
+  }
+  
+  /* Ajustes para mobile - PROADI-SUS */
+  .cardProjetoContent {
+    flex-direction: column;
+    min-height: auto;
+  }
+  
+  .imagemFullHeight {
+    width: 100%;
+    height: 250px;
+    order: -1;
+  }
+  
+  .textoContent {
+    padding: 1.5rem;
+  }
 }

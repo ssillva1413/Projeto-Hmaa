@@ -7,14 +7,17 @@
   background-color: white;
   color: #01793F;
   z-index: 10;
-
-
+  
+  /* Borda mais fina e sutil */
+  border-bottom: 1px solid rgba(1, 121, 63, 0.3); /* Verde com 30% de opacidade */
+  
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 40px; 
 }
 
+/* Restante do CSS permanece igual */
 .logo {
   height: 64px;
   object-fit: contain;
