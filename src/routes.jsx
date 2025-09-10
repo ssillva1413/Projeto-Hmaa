@@ -7,12 +7,13 @@ import Cartao from "./pages/Cartao"
 import Noticias from "./pages/Noticias"
 import Page404 from "./pages/Page404"
 import PageBase from "./pages/PageBase"
-
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 function AppRoutes () {
     return(
        <BrowserRouter>
            
+                <ScrollToTop />
                 <Routes>
                     <Route path="/" element={<PageBase />}>
                         <Route index element ={<Home />}></Route>

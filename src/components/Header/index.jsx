@@ -14,11 +14,12 @@ function Header() {
 
        
         <Link to ='/'>HOME</Link>
+        <Link to ='/sobre'>SOBRE</Link>
         <Link to ='/especialidades'>ESPECIALIDADES</Link>
-         <Link to = '/cartão'>CLINICA</Link>
+        <Link to = '/cartão'>CLINICA</Link>
         <Link to ='/noticias'>NOTICIAS</Link>
         <Link to ='/projetos'>PROJETOS</Link>
-        <Link to ='/sobre'>SOBRE</Link>
+       
         
         
 

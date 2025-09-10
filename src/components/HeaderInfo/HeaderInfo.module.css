@@ -4,45 +4,54 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color:#01793F;
-  padding: 0.6rem 0.3rem;
-  font-size: 0.9rem;
-
+  background-color: #01793F;
+  padding: 0.8rem 1rem; /* Aumentei um pouco o padding */
+  font-size: 1rem; /* Aumentei a fonte */
+  font-weight: bold; /* Adicionei negrito */
 }
-.whatsapp{ 
- margin-left: 1.3rem;
 
+.whatsapp { 
+  margin-left: 1.3rem;
 }
-.wpp{
-  color:white;
+
+.wpp {
+  color: white;
   cursor: pointer;
   text-decoration: none;
+  font-weight: bold; /* Adicionei negrito */
 }
-.wpp:hover{
-  color: #01793F;
 
+.wpp:hover {
+  color: #e6e6e6; /* Mudei para um hover mais suave */
 }
-.socialMedia{
+
+.socialMedia {
   color: white;
-  
+  display: flex;
+  align-items: center;
+  gap: 0.2rem; 
 }
+
 .contatos {
   display: flex;
   align-items: center;
- 
 }
 
 .icon {
-  margin-right: 0.5rem;
+  margin-right: 0.3rem; 
 }
 
 .socialMedia a {
-  margin-left: 1rem;
   color: inherit;
   text-decoration: none;
-  font-weight: bold;
+  transition: color 0.3s ease; 
 }
 
 .socialMedia a:hover {
-  color: #01793F;
+  color: #e6e6e6; 
+}
+
+.socialText {
+  margin-right: 0.5rem; 
+  font-weight: bold; 
 }
