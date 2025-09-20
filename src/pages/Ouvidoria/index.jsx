@@ -17,7 +17,7 @@ function Ouvidoria() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Dados enviados:", form);
-    // aqui futuramente conectamos com o back (igual ao modelo de autenticação)
+ 
   };
 
   return (
