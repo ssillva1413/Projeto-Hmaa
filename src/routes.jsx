@@ -8,6 +8,9 @@ import Noticias from "./pages/Noticias"
 import Page404 from "./pages/Page404"
 import PageBase from "./pages/PageBase"
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import NoticiasDetalhes from "./pages/NoticiasDetalhes";
+import WhatsAppButton from "./components/WhatsAppButton"; 
+import Ouvidoria from "./pages/Ouvidoria";
 
 function AppRoutes () {
     return(
@@ -23,9 +26,16 @@ function AppRoutes () {
                         <Route path="/projetos" element ={<Projeto />}></Route>
                         <Route path="/cartão" element ={<Cartao />}></Route>
                         <Route path="/*" element ={<Page404 />}></Route>
+
+                        <Route path="/noticias/:id" element={<NoticiasDetalhes />} /> 
+
+                         <Route path="/ouvidoria" element={<Ouvidoria />} />
+
+
                     </Route>
                     
                 </Routes>
+                 <WhatsAppButton />
             
            
 

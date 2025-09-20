@@ -7,6 +7,7 @@ import { FaEnvelope } from "react-icons/fa";
 import styles from './Footer.module.css';
 
 
+
 const Footer = () => {
   return (
     <footer className={styles.footer}>
@@ -37,7 +38,7 @@ const Footer = () => {
           <ul>
             <a href="https://www.facebook.com/HospitalAgenorAraujo" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
             <a href="https://www.instagram.com/hosp_agenoraraujo/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-            <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+            <a href="https://www.linkedin.com/company/hospital-agenor-araujo/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
           </ul>
         </div>
       </div>

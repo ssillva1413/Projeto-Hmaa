@@ -1,5 +1,4 @@
 
-
 .background {
   background-image: url('bg.JPEG');
   background-size: cover;
@@ -22,7 +21,7 @@
 
 .tituloVerde {
   font-size: 40px;
-  color: #007543;
+  color: #188E5A;
   font-weight: 800;
 }
 
@@ -60,4 +59,5 @@
   font-size: 16px;
   color: #555;
   line-height: 1.5;
+  text-align: justify;
 }

@@ -1,21 +1,99 @@
-.titulo2{
-    color:#01793F;
-    padding-top: 2rem;
-  
+/* Container geral ocupando a página inteira */
+.container {
+  width: 100%;
+  min-height: 80vh; /* ocupa quase a tela toda */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  box-sizing: border-box;
 }
-.erro{
-    font-size: 200px;
-    color: black;
-    font-weight: bold;
-    
-}
-.voltar{
-        color:#01793F;
 
+/* Logo maior */
+.logo {
+  max-width: 300px;
+  margin-bottom: 2rem;
 }
-.texto{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+
+/* Subtítulo */
+.titulo2 {
+  color:#188E5A;
+  font-size: 2.4rem; /* aumentado */
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+/* Texto central */
+.texto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Erro 404 */
+.erro {
+  font-size: 10rem; /* aumentado */
+  color: black;
+  font-weight: bold;
+  margin: 1.5rem 0;
+}
+
+/* Botão de voltar */
+.voltar {
+  color: #fff;
+  background: #188E5A;
+  padding: 0.9rem 2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.4rem; /* aumentado */
+  margin-top: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.voltar:hover {
+  background: #188E5A;
+  transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .erro {
+    font-size: 6rem;
+  }
+
+  .titulo2 {
+    font-size: 1.8rem;
+  }
+
+  .logo {
+    max-width: 200px;
+  }
+
+  .voltar {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .erro {
+    font-size: 4rem;
+  }
+
+  .titulo2 {
+    font-size: 1.5rem;
+  }
+
+  .logo {
+    max-width: 160px;
+  }
+
+  .voltar {
+    font-size: 1rem;
+    padding: 0.7rem 1.4rem;
+  }
 }

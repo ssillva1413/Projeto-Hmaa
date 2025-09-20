@@ -1,0 +1,102 @@
+.ouvidoriaContainer {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+/* Área da imagem */
+.imageArea {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageArea img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Área do formulário */
+.formArea {
+  flex: 1;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.formArea h2 {
+  margin-bottom: 1rem;
+  color: #188E5A;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form label {
+  font-weight: bold;
+  color: #444;
+  font-size: 0.9rem;
+}
+
+.form input,
+.form select,
+.form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.form textarea {
+  resize: vertical;
+}
+
+.form button {
+  background: #188E5A;
+  color: white;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 0.5rem;
+}
+
+.form button:hover {
+  background: #0f5a3b;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .ouvidoriaContainer {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .imageArea {
+    order: -1; /* imagem vem primeiro no mobile */
+    margin-bottom: 1rem;
+  }
+
+  .formArea {
+    width: 100%;
+  }
+}

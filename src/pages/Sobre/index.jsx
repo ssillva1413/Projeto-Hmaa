@@ -1,5 +1,5 @@
 import style from "./Sobre.module.css"
-import hmaa from "./images/hmaa.webp"
+
 
 function Sobre (){
     return (
@@ -8,7 +8,7 @@ function Sobre (){
             
         <section className={style.sobre}>
           <div className={style.bio}>
-            <img src={hmaa} alt="hmaa" className={style.hmaa} />
+            <img src="Novopage.jpg" alt="hmaa" className={style.hmaa} />
             <div className={style.textos}>
             <h2>Conheça a nossa história</h2>
             
