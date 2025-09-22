@@ -1,6 +1,9 @@
 .headerInfo {
-  position: relative;
-  z-index: 20;
+  position: fixed;         /* fixo no topo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1100;           /* acima do header */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,7 +11,9 @@
   padding: 0.6rem 1rem;
   font-size: 0.9rem;
   font-weight: bold;
+  height: 40px;            /* define altura fixa */
 }
+
 
 /* Ouvidoria */
 .ouvidoria {
