@@ -1,74 +1,75 @@
-/* Ouvidoria.module.css (ajustado para centralizar card e deslocar imagem) */
-
-.ouvidoriaContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* coluna esquerda = imagem, direita = card */
-  align-items: center;
-  justify-items: center;
-  gap: 2.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
+.page {
+  min-height: 100vh; /* ocupa toda a tela */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   padding: 2rem;
-  min-height: 100vh;
   background-color: #f4f4f4;
 }
 
-/* Área da imagem (coluna esquerda) */
-.imageArea {
-  justify-self: start; /* coloca a área da imagem no início da coluna esquerda */
-  width: 100%;
+.title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #188E5A;
+}
+
+.ouvidoriaContainer {
   display: flex;
-  justify-content: flex-start; /* imagem à esquerda dentro da coluna */
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  flex: 1;
+}
+
+.imageArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  padding-left: 1rem;
 }
 
 .imageArea img {
-  width: 280px;              /* tamanho fixo controlado para consistência */
-  max-width: 90%;
+  max-width: 100%;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transform: translateX(-36px); /* DESLOCA a imagem mais para a esquerda */
-  transition: transform 0.25s ease;
 }
 
-/* Área do formulário (coluna direita) */
+.description {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #444;
+  text-align: center;
+  max-width: 400px;
+}
+
 .formArea {
-  justify-self: center;    /* centra o card dentro da coluna direita */
-  width: 100%;
-  max-width: 620px;        /* largura máxima do card */
+  flex: 1;
   background: #ffffff;
-  padding: 1.0rem 1.4rem;  /* menos espaço no topo */
+  padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
-  text-align: center;
-  transform: translateX(-12px); /* PUXA o card um pouco para a esquerda (mais próximo do centro) */
+  align-items: center;
 }
 
-/* Logo acima do título */
 .logo {
-  max-width: 80px;
-  margin: 0 auto 0.4rem auto; /* reduz espaço acima/abaixo da logo */
-  display: block;
+  width: 120px; /* logo maior */
+  margin-bottom: 1rem;
 }
 
 .formArea h2 {
-  margin: 0 0 0.8rem 0;
+  margin-bottom: 1rem;
   color: #188E5A;
-  font-size: 1.4rem;
-  text-align: center;
+  font-size: 1.6rem;
 }
 
-/* Form */
 .form {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
-  text-align: left;
+  gap: 1rem;
+  width: 100%;
 }
 
 .form label {
@@ -83,12 +84,11 @@
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .form textarea {
   resize: vertical;
-  min-height: 100px;
 }
 
 .form button {
@@ -100,52 +100,25 @@
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.3s;
-  margin-top: 0.4rem;
+  margin-top: 0.5rem;
 }
 
 .form button:hover {
   background: #0f5a3b;
 }
 
-/* ===== Responsividade ===== */
-@media (max-width: 1100px) {
-  .imageArea img {
-    width: 240px;
-    transform: translateX(-28px);
-  }
-
-  .formArea {
-    max-width: 540px;
-    transform: translateX(-8px);
-  }
-}
-
+/* Responsividade */
 @media (max-width: 900px) {
-  /* no mobile, passa para coluna e centraliza tudo */
   .ouvidoriaContainer {
-    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.2rem;
-    padding: 1rem;
-  }
-
-  .imageArea {
-    order: -1;
-    justify-content: center;
-    padding-left: 0;
-  }
-
-  .imageArea img {
-    transform: translateX(0); /* remove deslocamento no mobile */
-    width: 220px;
-    max-width: 70%;
   }
 
   .formArea {
     width: 100%;
-    max-width: 500px;
-    transform: translateX(0);
-    padding: 1rem;
+  }
+
+  .description {
+    text-align: center;
   }
 }
