@@ -92,16 +92,31 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .headerInfo {
-    font-size: 0.8rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.85rem;
+    padding: 0.5rem;
+    text-align: center;
   }
 
-  .ouvidoriaIcon {
-    font-size: 1rem;
+  /* Agrupar Ouvidoria + Redes Sociais em linha */
+  .ouvidoria,
+  .socialMedia {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 
-  .icon {
-    font-size: 0.9rem;
+  .headerInfo {
+    flex-direction: row; /* forçar lado a lado */
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .socialText {
+    display: none; /* some no mobile */
   }
 }
