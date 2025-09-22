@@ -11,26 +11,26 @@ const noticias = [
   },
   {
     id: 2,
-    titulo: "3C Medical é destaque na Revista Vialgo",
+    titulo: "Teste 2",
     data: "10/03/2024",
-    resumo: "A 3C Medical foi destaque na última edição da Revista Vialgo com seus equipamentos hospitalares...",
-    imagem: "/noticia2.jpg",
+    resumo: "Texto aqui",
+    imagem: "Image2.jpg",
     link: "/noticias/2"
   },
   {
     id: 3,
-    titulo: "3C Medical na Hospitalar 2022",
+    titulo: "Teste 3",
     data: "05/03/2024",
-    resumo: "A 3C Medical estará presente na 27ª edição da Hospitalar, apresentando suas novidades em equipamentos...",
-    imagem: "/noticia3.jpg",
+    resumo: "Texto aqui",
+    imagem: "Image3.jpg",
     link: "/noticias/3"
   },
   {
     id: 4,
-    titulo: "Governo do Ceará reforça compromisso com saúde",
+    titulo: "Teste 4",
     data: "01/03/2024",
-    resumo: "O Governo do Ceará anunciou novos investimentos para fortalecer a saúde na região Centro-Sul com foco em cirurgias...",
-    imagem: "/noticia4.jpg",
+    resumo: "Texto aqui",
+    imagem: "Image4.jpg",
     link: "/noticias/4"
   }
 ];

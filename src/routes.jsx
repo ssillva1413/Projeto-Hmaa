@@ -26,9 +26,7 @@ function AppRoutes () {
                         <Route path="/projetos" element ={<Projeto />}></Route>
                         <Route path="/cartão" element ={<Cartao />}></Route>
                         <Route path="/*" element ={<Page404 />}></Route>
-
                         <Route path="/noticias/:id" element={<NoticiasDetalhes />} /> 
-
                          <Route path="/ouvidoria" element={<Ouvidoria />} />
 
 

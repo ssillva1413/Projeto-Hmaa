@@ -17,19 +17,20 @@ function Ouvidoria() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Dados enviados:", form);
- 
+    // aqui futuramente conectamos com o back (igual ao modelo de autenticação)
   };
 
   return (
     <div className={styles.ouvidoriaContainer}>
       {/* Imagem */}
       <div className={styles.imageArea}>
-        <img src="/atendente.jpg" alt="Atendente da Ouvidoria" />
+        <img src="ouvidoria.png" alt="Atendente da Ouvidoria" />
       </div>
 
       {/* Formulário */}
       <div className={styles.formArea}>
-        <h2>Ouvidoria Hospitalar</h2>
+        <img src="Novopage.jpg" alt="Logo do Hospital" className={styles.logo} />
+        <h2>Ouvidoria </h2>
         <form onSubmit={handleSubmit} className={styles.form}>
           {/* Identificação */}
           <label htmlFor="nome">Identificação</label>
@@ -69,9 +70,9 @@ function Ouvidoria() {
             onChange={handleChange}
           >
             <option value="">Selecione...</option>
-            <option value="ambulatorio">Ambulatório</option>
+            <option value="ambulatorio sus">Ambulatório SUS</option>
+            <option value="ambulatorio part">Ambulatório Particular</option>
             <option value="internacao">Internação</option>
-            <option value="emergencia">Emergência</option>
             <option value="recepcao">Recepção</option>
             <option value="financeiro">Financeiro</option>
             <option value="outro">Outro</option>
@@ -89,7 +90,7 @@ function Ouvidoria() {
             onChange={handleChange}
           ></textarea>
 
-          <button type="submit">Enviar Manifestação</button>
+          <button type="submit">Enviar</button>
         </form>
       </div>
     </div>

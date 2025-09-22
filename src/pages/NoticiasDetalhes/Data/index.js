@@ -83,6 +83,7 @@ const noticias = [
         raumatologia e anestésica.`,
       },
       {
+        subtitulo: "Mais investimento em saúde",  // Adiciona o subtítulo aqui
         tipo:"texto",
         valor:`O Ceará também é contemplado pelo Programa Nacional de Redução de Filas, do Governo Federal, contando com recurso de R$25,9 milhões
          e uma contrapartida estadual no valor de R$7,98 milhões, totalizando R$ 33,88 milhões para 15.900 cirurgias. Com os investimentos das iniciativas 
@@ -107,18 +108,16 @@ const noticias = [
     imagem: "/estado.jpg",
     titulo: "teste 1",
     data: "24/10/2024",
-    texto: `Diferentes propósitos para as camas, um único objetivo na qualidade do cuidado ao paciente. 
-Esse recurso pode auxiliar tanto na pesagem de pacientes acamados quanto no monitoramento clínico.`,
+    texto: `Texto aqui.`,
     tags: ["Equipamentos", "Hospitalares", "Inovação"],
     autores: ["Equipe SC Medical"],
   },
   {
     id: 3,
-    imagem: "/estado.jpg",
+    imagem: "/image.jpg",
     titulo: "teste 2",
     data: "28 DE JULHO DE 2023 - 21:16",
-    texto: `Em Iguatu, no Centro-Sul cearense, o Hospital e Maternidade Agenor Araújo (HMAA) está credenciado desde maio deste ano para atender pacientes dentro do Plano Estadual de Redução das Filas de Cirurgias Eletivas, Exames Complementares e Consultas Especializadas. 
-Até o momento, 110 procedimentos foram realizados na unidade. Na tarde desta terça-feira (25), o governador Elmano de Freitas visitou o Hospital, acompanhado de autoridades, e reforçou a parceria para ampliar acesso ao tratamento do câncer.`,
+    texto: `Texto aqui.`,
     tags: [
       "Ficouro-Sul",
       "Cirurgias Eletivas",

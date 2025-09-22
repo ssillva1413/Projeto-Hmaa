@@ -1,25 +1,20 @@
 import React from 'react';
 import styles from './HeaderInfo.module.css';
-import { FaFacebookF, FaInstagram } from 'react-icons/fa';
-import { MdRecordVoiceOver } from 'react-icons/md'; // Ícone de Ouvidoria
+import { FaFacebookF, FaInstagram, FaHeadset } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 function HeaderInfo() {
   return (
     <div className={styles.headerInfo}>
-      {/* Ouvidoria - lado esquerdo */}
+      {/* Ouvidoria (lado esquerdo) */}
       <div className={styles.ouvidoria}>
-        <MdRecordVoiceOver className={styles.ouvidoriaIcon} />
-        <a
-          href="#"
-          className={styles.ouvidoriaLink}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <FaHeadset className={styles.ouvidoriaIcon} />
+        <Link to="/ouvidoria" className={styles.ouvidoriaLink}>
           Ouvidoria
-        </a>
+        </Link>
       </div>
 
-      {/* Redes sociais - lado direito */}
+      {/* Redes sociais (lado direito) */}
       <div className={styles.socialMedia}>
         <span className={styles.socialText}>Siga nossas redes sociais:</span>
         <a

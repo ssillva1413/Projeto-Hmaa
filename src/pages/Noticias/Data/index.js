@@ -17,17 +17,17 @@ const noticias = [
   },
   {
     id: 3,
-    imagem: "/images/revista-vinkgo.jpg",
-    titulo: "SC Medical é destaque na Revista Vinkgo",
+    imagem: "image.jpg",
+    titulo: "Image",
     data: "02/06/2022",
-    texto: "A SC Medical foi destaque na última edição da Revista Vinkgo pelos seus avanços tecnológicos..."
+    texto: "Texto aqui"
   },
   {
     id: 4,
-    imagem: "/images/hospitalar.jpg",
-    titulo: "SC Medical na Hospitalar 2022",
+    imagem: "image.jpg",
+    titulo: "Image",
     data: "03/05/2022",
-    texto: "A SC Medical estará presente na 27ª edição da Hospitalar, maior feira da área na América Latina..."
+    texto: "Texto aqui"
   }
 ];
 
