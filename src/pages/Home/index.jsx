@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import { videos, cards } from "./Data/homeData";
 import noticias from "./Data/noticias";
 
-
 const Home = () => {
   const [currentVideo, setCurrentVideo] = useState(0);
+
+  // refs para animação on scroll
+  const bannerRef = useRef(null);
+  const cardRef = useRef(null);
 
   useEffect(() => {
     const videoElement = document.getElementById("videoPlayer");
@@ -27,30 +30,49 @@ const Home = () => {
     };
   }, [currentVideo]);
 
-  // Pegando apenas as 4 primeiras notícias para a Home
+  // Animações on scroll
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(styles.animate);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (bannerRef.current) observer.observe(bannerRef.current);
+    if (cardRef.current) observer.observe(cardRef.current);
+
+    return () => {
+      if (bannerRef.current) observer.unobserve(bannerRef.current);
+      if (cardRef.current) observer.unobserve(cardRef.current);
+    };
+  }, []);
+
+  // últimas notícias
   const ultimasNoticias = noticias.slice(0, 4);
 
   return (
     <>
-      {/* Seção 1: Banner e Cards */}
-      <section className={styles.section1}>
-        <div className={styles.videoCarousel}>
-          <div className={styles.carouselContainer}>
-            <div className={styles.videoWrapper}>
-              <video
-                key={currentVideo}
-                id="videoPlayer"
-                autoPlay
-                muted
-                className={styles.video}
-              >
-                <source src={videos[currentVideo]} type="video/mp4" />
-                Seu navegador não suporta vídeos em MP4.
-              </video>
-            </div>
-          </div>
-        </div>
+      {/* Seção 1: Banner */}
+      <section className={styles.sectionBanner} ref={bannerRef}>
+        <video
+          key={currentVideo}
+          id="videoPlayer"
+          autoPlay
+          muted
+          className={styles.video}
+        >
+          <source src={videos[currentVideo]} type="video/mp4" />
+          Seu navegador não suporta vídeos em MP4.
+        </video>
+      </section>
 
+      {/* Seção 2: Mensagem + Cartão */}
+      <section className={styles.sectionMessage} ref={cardRef}>
         <div className={styles.cardsContainer}>
           {cards.map((card) =>
             card.isExternal ? (
@@ -74,24 +96,23 @@ const Home = () => {
         </div>
 
         <div className={styles.messageSection}>
-          {/* Texto */}
           <div className={styles.message}>
-            <h2>O cuidado<br></br> vem de casa!</h2>
+            <h2>O cuidado<br />vem de casa!</h2>
             <h3>
-              Um ambiente seguro e atencioso<br></br> onde você se sente acolhido
-              desde<br></br> o primeiro momento.
+              Um ambiente seguro e atencioso<br />
+              onde você se sente acolhido desde<br />
+              o primeiro momento.
             </h3>
           </div>
 
-          {/* Card de Promoção */}
           <Link to="/cartão" className={styles.promoCard}>
             <div className={styles.promoContent}>
               <h3>
-                Saiba como <br></br>
+                Saiba como <br />
                 <strong>
-                  o Cartão Popular<br></br> da Casa de Saúde
+                  o Cartão Popular<br /> da Casa de Saúde
                 </strong>
-                <br></br> pode te ajudar<br></br> no <strong>HMAA</strong>
+                <br /> pode te ajudar<br /> no <strong>HMAA</strong>
               </h3>
 
               <div className={styles.promoImage}>
@@ -102,7 +123,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Seção 2: Últimas Notícias */}
+      {/* Seção 3: Últimas Notícias */}
       <section className={styles.sectionNews}>
         <div className={styles.newsHeader}>
           <div className={styles.newsDivider}>
@@ -132,7 +153,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Seção 3: Localização */}
+      {/* Seção 4: Localização */}
       <section className={styles.section2}>
         <div className={styles.locationHeader}>
           <div className={styles.sectionDivider}>

@@ -5,6 +5,36 @@
 }
 
 /* ===== SEÇÃO 1: BANNER E CARDS ===== */
+
+/* ===== NOVA SEÇÃO BANNER ===== */
+.sectionBanner {
+  width: 100%;
+  height: 70vh; /* pega a tela toda */
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.sectionBanner,
+.sectionMessage {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+
+.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== SEÇÃO MENSAGEM ===== */
+.sectionMessage {
+  padding: 4rem 0;
+  background: #fff;
+}
+
 .videoCarousel {
   width: 100%;
   display: flex;
@@ -34,7 +64,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 .cardsContainer {
