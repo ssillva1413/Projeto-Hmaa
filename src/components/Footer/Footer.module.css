@@ -10,7 +10,7 @@ html, body, #root {
 }
 
 .footer {
-  background-color:#188E5A;
+  background-color: #188E5A;
   color: white;
   padding: 60px 40px 20px 40px;
 }
@@ -30,8 +30,10 @@ html, body, #root {
 }
 
 .information {
-  min-width: 34%;
-  margin-right: 180px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
 }
 
 .information h3, .navigation h3, .icons h3 {
@@ -93,4 +95,31 @@ html, body, #root {
   border-top: 1px solid gray;
   color: #ccc;
   font-size: 0.9rem;
+}
+
+/* Ajuste para o layout no mobile */
+@media (max-width: 768px) {
+  .topContent {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .information {
+    min-width: 100%;
+    margin-right: 0;
+  }
+
+  .information p {
+    flex: 1;
+    margin: 5px 0;
+    font-size: 14px;
+  }
+
+  .navigation ul li {
+    font-size: 14px;
+  }
+
+  .icons ul {
+    gap: 15px;
+  }
 }
