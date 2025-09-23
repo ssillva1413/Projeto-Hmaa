@@ -1,6 +1,6 @@
 .header {
   position: fixed;
-  top: 40px; /* logo abaixo do HeaderInfo */
+  top: 40px; /* abaixo do HeaderInfo */
   left: 0;
   width: 100%;
   height: 70px;
@@ -16,7 +16,7 @@
   padding: 0 40px;
 }
 
-/* LOGO responsiva */
+/* Logo */
 .logo {
   height: 64px;
   max-width: 180px;
@@ -24,7 +24,7 @@
   object-fit: contain;
 }
 
-/* ====== DESKTOP MENU ====== */
+/* Menu desktop */
 .desktopMenu {
   display: flex;
   gap: 1.2rem;
@@ -41,42 +41,77 @@
   color: #BE3638;
 }
 
-/* ====== MOBILE MENU ====== */
+/* Ícone hambúrguer */
 .menuIcon {
   display: none;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: #188E5A;
   cursor: pointer;
-  z-index: 1101; /* acima do menu */
+  z-index: 1201;
 }
 
-.mobileMenu {
-  position: absolute;
-  top: 70px; /* logo abaixo do header */
-  left: 0;
-  width: 100%;
+/* Drawer lateral */
+.mobileDrawer {
+  position: fixed;
+  top: 0;
+  right: -260px; /* começa fora da tela */
+  width: 260px;
+  height: 100vh;
   background-color: white;
-  border-top: 1px solid rgba(1, 121, 63, 0.3);
+  box-shadow: -2px 0 6px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease-in-out;
+  z-index: 1200;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem 0;
-  z-index: 1100;
 }
 
-.mobileMenu a {
+.mobileDrawer.open {
+  right: 0; /* entra na tela */
+}
+
+.drawerHeader {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(1, 121, 63, 0.3);
+}
+
+.closeIcon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #188E5A;
+}
+
+.drawerMenu {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 1rem;
+}
+
+.drawerMenu a {
   color: #188E5A;
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
 }
 
-.mobileMenu a:hover {
+.drawerMenu a:hover {
   color: #BE3638;
 }
 
-/* ====== RESPONSIVIDADE ====== */
+/* Overlay escuro */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 1100;
+}
+
+/* ===== Responsividade ===== */
 @media (max-width: 768px) {
   .desktopMenu {
     display: none; /* esconde menu desktop */
