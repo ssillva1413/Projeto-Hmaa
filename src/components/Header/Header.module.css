@@ -1,6 +1,6 @@
 .header {
   position: fixed;
-  top: 40px;              /* logo abaixo do HeaderInfo */
+  top: 40px; /* logo abaixo do HeaderInfo */
   left: 0;
   width: 100%;
   height: 70px;
@@ -24,35 +24,71 @@
   object-fit: contain;
 }
 
-nav {
+/* ====== DESKTOP MENU ====== */
+.desktopMenu {
   display: flex;
   gap: 1.2rem;
 }
 
-.header a {
+.desktopMenu a {
   color: #188E5A;
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
 }
 
-.header a:hover {
+.desktopMenu a:hover {
   color: #BE3638;
 }
 
-/* --- Responsividade --- */
+/* ====== MOBILE MENU ====== */
+.menuIcon {
+  display: none;
+  font-size: 1.5rem;
+  color: #188E5A;
+  cursor: pointer;
+  z-index: 1101; /* acima do menu */
+}
+
+.mobileMenu {
+  position: absolute;
+  top: 70px; /* logo abaixo do header */
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border-top: 1px solid rgba(1, 121, 63, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  z-index: 1100;
+}
+
+.mobileMenu a {
+  color: #188E5A;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.mobileMenu a:hover {
+  color: #BE3638;
+}
+
+/* ====== RESPONSIVIDADE ====== */
 @media (max-width: 768px) {
+  .desktopMenu {
+    display: none; /* esconde menu desktop */
+  }
+
+  .menuIcon {
+    display: block; /* mostra hambúrguer */
+  }
+
   .logo {
-    height: 50px; /* diminui a logo */
+    height: 50px;
     max-width: 140px;
-  }
-
-  nav {
-    gap: 0.8rem;
-  }
-
-  .header a {
-    font-size: 0.8rem;
   }
 }
 
@@ -60,10 +96,6 @@ nav {
   .logo {
     height: 40px;
     max-width: 120px;
-  }
-
-  nav {
-    gap: 0.5rem;
   }
 
   .header {

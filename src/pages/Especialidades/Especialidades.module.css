@@ -1,11 +1,8 @@
-
 .background {
-  background-image: url('bg.JPEG');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   padding: 60px 20px;
-  
 }
 
 .fundoTitulo {
@@ -25,6 +22,20 @@
   font-weight: 800;
 }
 
+/* =====================
+   Animação scroll
+   ===================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .card {
   display: flex;
   flex-direction: row;
@@ -33,9 +44,24 @@
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin: 20px auto;
-  max-width: 1200px; /* Aumentamos a largura máxima */
-  height: 260px; /* Reduzimos a altura */
+  max-width: 1200px;
+  height: 260px;
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* estado inicial invisível */
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.show {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Hover no card */
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .imagem {
@@ -45,6 +71,12 @@
   flex-shrink: 0;
   border-top-left-radius: 16px;
   border-bottom-left-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+/* Zoom leve na imagem quando hover */
+.card:hover .imagem {
+  transform: scale(1.05);
 }
 
 .texto {
@@ -60,4 +92,37 @@
   color: #555;
   line-height: 1.5;
   text-align: justify;
+}
+
+/* ===========================
+   RESPONSIVIDADE
+   =========================== */
+@media (max-width: 768px) {
+  .tituloCinza {
+    font-size: 18px;
+  }
+
+  .tituloVerde {
+    font-size: 28px;
+  }
+
+  .card {
+    flex-direction: column;
+    height: auto;
+    max-width: 95%;
+  }
+
+  .imagem {
+    width: 100%;
+    height: 200px;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .texto {
+    padding: 16px;
+  }
+
+  .texto p {
+    font-size: 14px;
+  }
 }
