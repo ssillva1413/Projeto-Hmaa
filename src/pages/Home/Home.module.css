@@ -4,51 +4,49 @@
   padding: 2rem 0;
 }
 
-/* ===== SEÇÃO 1: BANNER ===== */
+/* ===== SEÇÃO 1: BANNER E CARDS ===== */
+
+/* ===== NOVA SEÇÃO BANNER ===== */
 .sectionBanner {
   width: 100%;
-  height: 70vh; /* desktop */
+  height: 70vh; /* pega a tela toda */
   overflow: hidden;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
-.sectionBanner,
-.sectionMessage {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 1s ease;
+.videoCarousel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-.animate {
-  opacity: 1;
-  transform: translateY(0);
+.carouselContainer {
+  width: 100%;
+  height: calc(70vh - 120px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 /9;
+  overflow: hidden;
 }
 
 .video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-/* Mobile: banner ajustado */
-@media (max-width: 768px) {
-  .sectionBanner {
-    height: auto;
-    min-height: 40vh;
-  }
-  .video {
-    height: auto;
-    max-height: 50vh;
-  }
-}
-
-/* ===== SEÇÃO MENSAGEM ===== */
-.sectionMessage {
-  padding: 4rem 0;
-  background: #fff;
 }
 
 .cardsContainer {
@@ -81,7 +79,7 @@
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  background: #188E5A;
+  background: #188E5A ;
 }
 
 .cardIcon {
@@ -97,6 +95,7 @@
 }
 
 /* ===== SEÇÃO DE MENSAGEM ===== */
+/* Ajuste layout da mensagem e card */
 .messageSection {
   display: flex;
   justify-content: space-between;
@@ -107,6 +106,7 @@
   align-items: flex-start;
   flex-wrap: wrap;
 }
+/* Imagem de fundo (mulher) */
 .messageSection::before {
   content: "";
   position: absolute;
@@ -120,21 +120,52 @@
   opacity: 1;
 }
 
+/* Texto */
+.message {
+  margin-top: 0;
+
+}
+
 .message h2 {
   color: #188E5A;
   font-size: 2.4rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif; /* Define Poppins como a fonte */
 }
 
 .message h3 {
   font-size: 1.2rem;
-  color: #188E5A;
+  color: #444;
   font-weight: 400;
   line-height: 1.6;
-  font-family: 'Poppins', sans-serif;
+  color: #188E5A;
+  
+  font-family: 'Poppins', sans-serif; /* Define Poppins como a fonte */
+        
 }
+
+/*.message p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 1.5rem;
+}*/
+
+/*.btnMessage {
+  display: inline-block;
+  background: #188E5A;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.btnMessage:hover {
+  background: #136c46;
+}*/
 
 /* Cartão Promo */
 .promoCard {
@@ -147,31 +178,87 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100%;
-  max-width: 300px;
   min-height: 380px;
-  text-decoration: none;
-  margin: 0 auto;
+  max-width: 300px;
+  text-decoration: none; /* remove sublinhado */
 }
 
+/* Texto dentro do card */
 .promoCard h3 {
   font-size: 1.1rem;
   font-weight: 400;
   line-height: 1.5;
+  text-decoration: none;
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif; /* Define Poppins como a fonte */ 
 }
 
 .promoCard strong {
   font-weight: 700;
 }
 
+/* Imagem do cartão */
 .promoImage img {
   max-width: 100%;
   transform: rotate(-10deg);
   border-radius: 10px;
   margin-top: 1rem;
 }
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .messageSection {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .promoCard {
+    max-width: 100%;
+    margin-top: 2rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .promoCard h3 {
+    text-align: center;
+  }
+
+  .promoImage img {
+    margin: 1.5rem auto 0;
+  }
+}
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 992px) {
+  .messageSection {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .messageSection::before {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background-position: center top;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+  }
+
+  .message {
+    max-width: 100%;
+  }
+
+  .promoCard {
+    min-height: auto;
+    text-align: center;
+  }
+
+  .promoImage img {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+}
+
 
 /* ===== SEÇÃO 2: ÚLTIMAS NOTÍCIAS ===== */
 .sectionNews {
@@ -190,6 +277,7 @@
   position: relative;
   padding: 0 2rem;
 }
+
 .newsDivider::before {
   content: '';
   position: absolute;
@@ -200,11 +288,12 @@
   background: #188E5A;
   z-index: 1;
 }
+
 .newsDivider h2 {
   display: inline-block;
   background: white;
   color: #188E5A;
-  font-size: 1.6rem;
+  font-size: 1.6rem; /* menor que antes */
   font-weight: 700;
   text-transform: uppercase;
   margin: 0;
@@ -236,6 +325,7 @@
   display: flex;
   flex-direction: column;
 }
+
 .newsCard:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
@@ -246,12 +336,14 @@
   overflow: hidden;
   flex-shrink: 0;
 }
+
 .newsImage img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
+
 .newsCard:hover .newsImage img {
   transform: scale(1.05);
 }
@@ -263,6 +355,7 @@
   flex-direction: column;
   min-height: 180px;
 }
+
 .newsContent h3 {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
@@ -275,16 +368,18 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+
 .newsDate {
   color: #666;
   font-size: 0.85rem;
   margin-bottom: 0.8rem;
   font-weight: 500;
 }
+
 .newsContent p {
   color: #444;
   line-height: 1.4;
-  margin-bottom: 0.1rem;
+  margin-bottom: 0.1rem; /* espaçamento antes do link */
   font-size: 0.95rem;
   flex: 1;
   overflow: hidden;
@@ -293,6 +388,7 @@
   -webkit-box-orient: vertical;
   max-height: 3.8rem;
 }
+
 .newsLink {
   display: inline-flex;
   align-items: center;
@@ -304,16 +400,20 @@
   margin-top: auto;
   padding: 0.5rem 0;
 }
+
 .newsLink:hover {
   color: #136c46;
   text-decoration: underline;
 }
+
 .newsLinkText {
   margin-right: 0.3rem;
 }
+
 .newsLinkArrow {
   transition: transform 0.3s ease;
 }
+
 .newsLink:hover .newsLinkArrow {
   transform: translateX(3px);
 }
@@ -326,15 +426,18 @@
   position: relative;
   overflow: visible;
 }
+
 .locationHeader {
   width: 100%;
   margin-bottom: 1.5rem;
 }
+
 .sectionDivider {
   position: relative;
   text-align: center;
   padding: 0 2rem;
 }
+
 .sectionDivider::before {
   content: '';
   position: absolute;
@@ -345,6 +448,7 @@
   background: #188E5A;
   z-index: 1;
 }
+
 .sectionDivider h2 {
   display: inline-block;
   background: #f8f9fa;
@@ -358,18 +462,21 @@
   position: relative;
   z-index: 2;
 }
+
 .address {
   text-align: left;
   margin: 0 0 2rem 2rem;
   padding: 0;
   max-width: 1200px;
 }
+
 .street {
   color: #333;
   font-size: 1.2rem;
   font-weight: 600;
   margin: 0 0 0.3rem 0;
 }
+
 .city {
   color: #666;
   font-size: 1.1rem;
@@ -383,17 +490,20 @@
   padding: 0;
   position: relative;
 }
+
 .hospitalImage {
   position: relative;
   width: 100%;
   height: 500px;
   overflow: visible;
 }
+
 .hospitalImage img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 .mapOverlay {
   position: absolute;
   top: -80px;
@@ -407,19 +517,36 @@
   border: 4px solid white;
   z-index: 30;
 }
+
 .mapOverlay iframe {
   width: 100%;
   height: 100%;
   border: none;
 }
+
 .hospitalImage img {
   transition: transform 0.5s ease;
 }
+
 .hospitalImage:hover img {
   transform: scale(1.03);
 }
 
 /* ===== RESPONSIVIDADE ===== */
+@media (max-width: 1400px) {
+  .newsGrid {
+    gap: 1.2rem;
+  }
+  
+  .newsContent {
+    padding: 1.2rem;
+  }
+  
+  .newsContent h3 {
+    font-size: 1.1rem;
+  }
+}
+
 @media (max-width: 1200px) {
   .newsGrid {
     grid-template-columns: repeat(2, 1fr);
@@ -427,84 +554,160 @@
     max-width: 800px;
     margin: 0 auto 3rem;
   }
+  
   .mapOverlay {
     width: 440px;
     height: 310px;
   }
 }
 
-@media (max-width: 992px) {
-  .messageSection::before {
-    position: relative;
-    width: 100%;
-    height: 250px;
-    background-position: center top;
-    margin-bottom: 1rem;
-    opacity: 0.9;
+@media (max-width: 1024px) {
+  .mapOverlay {
+    width: 400px;
+    height: 280px;
+    right: -15px;
   }
-  .promoImage img {
-    max-width: 250px;
-    margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .newsContainer {
+    padding: 0 1.5rem;
+  }
+  
+  .mapOverlay {
+    width: 360px;
+    height: 250px;
+    top: -15px;
   }
 }
 
 @media (max-width: 768px) {
-  .cardsContainer {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .sectionNews {
     padding: 3rem 0 2rem;
   }
+  
+  .newsDivider h2 {
+    font-size: 1.4rem; /* título menor em telas pequenas */
+  }
+  
   .newsGrid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     max-width: 500px;
   }
-  .promoCard {
-    max-width: 400px;
-    width: 100%;
-    min-height: auto;
-    padding: 1.5rem;
-  }
-  .mapOverlay {
-    position: relative;
-    top: 0;
-    right: 0;
-    width: 100%;
+  
+  .newsCard {
     height: auto;
-    aspect-ratio: 16/9;
-    margin: 1rem auto 0;
   }
-  .hospitalImage {
-    height: 350px;
+  
+  .newsContent h3,
+  .newsContent p {
+    height: auto;
+    max-height: none;
+    -webkit-line-clamp: unset;
+  }
+  
+  .section2 {
+    padding: 2.5rem 0 1.5rem;
+  }
+  
+  .mapOverlay {
+    width: 320px;
+    height: 230px;
+    top: -12px;
+    right: -12px;
+  }
+}
+
+@media (max-width: 650px) {
+  .mapOverlay {
+    width: 280px;
+    height: 200px;
   }
 }
 
 @media (max-width: 576px) {
-  .cardsContainer {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+  .sectionDivider h2 {
+    font-size: 1.3rem;
+    padding: 0 1rem;
   }
-  .card {
-    padding: 1.5rem 1rem;
-    min-height: 130px;
+  
+  .address {
+    margin-left: 1rem;
   }
-  .cardIcon {
-    font-size: 2rem;
-  }
+  
   .mapOverlay {
+    position: relative;
+    width: 100%;
     height: 250px;
+    top: 0;
+    right: 0;
+    margin: 1rem auto 0;
+    border-radius: 10px;
+    border-width: 3px;
   }
+  
   .hospitalImage {
     height: 250px;
     margin-bottom: 1rem;
   }
 }
 
+@media (max-width: 480px) {
+  .newsDivider h2 {
+    font-size: 1.2rem; /* ainda menor */
+    padding: 0 1rem;
+  }
+  
+  .newsContent {
+    padding: 1rem;
+  }
+  
+  .newsContent h3 {
+    font-size: 1.05rem;
+  }
+  
+  .sectionDivider h2 {
+    font-size: 1.2rem;
+  }
+  
+  .street {
+    font-size: 1rem;
+  }
+  
+  .city {
+    font-size: 0.9rem;
+  }
+  
+  .hospitalImage {
+    height: 220px;
+  }
+  
+  .mapOverlay {
+    height: 220px;
+  }
+}
+
 @media (max-width: 400px) {
+  .cardsContainer {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: -30px;
+  }
+  
+  .card {
+    padding: 1.5rem 1rem;
+    min-height: 120px;
+  }
+  
+  .cardIcon {
+    font-size: 2rem;
+  }
+  
   .hospitalImage {
     height: 200px;
   }
+  
   .mapOverlay {
     height: 200px;
   }
