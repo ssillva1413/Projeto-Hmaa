@@ -1,62 +1,78 @@
-import React from 'react';
-import styles from './Projetos.module.css';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useRef } from "react";
+import styles from "./Projetos.module.css";
 
 function Projetos() {
+  const sectionsRef = useRef([]);
+
+  useEffect(() => {
+    const sections = sectionsRef.current.filter(Boolean);
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(styles.visible);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.18 }
+    );
+
+    sections.forEach((sec) => observer.observe(sec));
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className={styles.container}>
-      <h1 className={styles.tituloPrincipal}>PROJETOS</h1>
-
-      {/* SESSÃO MÃOS QUE CUIDAM */}
-      <section className={styles.sessaoMaos}>
-        <div className={styles.sessaoConteudo}>
-          <img src="img1.jpeg" alt="Projeto 1" className={styles.imagemLateral} />
-
-          <div className={styles.bannerCentral}>
-            <img src="maos_que_cuidam.jpg" alt="Logo Mãos que Cuidam" />
+    <div className={styles.projetos}>
+      {/* Sessão 1 — Mãos que Cuidam (IMAGEM à ESQUERDA, image entra da esquerda) */}
+      <section
+        ref={(el) => (sectionsRef.current[0] = el)}
+        className={`${styles.section} ${styles.imageLeft}`}
+      >
+        <div className={`${styles.imageWrapper} ${styles.fromLeft}`}>
+          <div className={styles.imageFrame}>
+            {/* troque para sua imagem real */}
+            <img src="proadi.jpg" alt="Mãos que Cuidam" />
           </div>
-
-          <img src="img2.jpeg" alt="Projeto 2" className={styles.imagemLateral} />
         </div>
 
-        <div className={styles.botaoContainer}>
-          <Link to="/projetos/maosquecuidam" className={styles.botao}>
-            Saiba mais...
-          </Link>
+        <div className={`${styles.textWrapper} ${styles.fromRightDelay}`}>
+          <h2>Mãos que Cuidam</h2>
+          <p>
+            Projeto voltado para o cuidado humanizado e apoio social, fortalecendo
+            o vínculo entre saúde e comunidade. Aqui você descreve missão, metas e impacto.
+          </p>
+
+          {/* botão abaixo do texto (mantive max-width igual ao frame da imagem) */}
+          <button className={styles.ctaButton}>Saiba mais</button>
         </div>
       </section>
 
-      {/* SESSÃO PROADI-SUS (mantida, vamos ajustar depois se quiser) */}
-      <section className={styles.sessaoProadi}>
-        <div className={styles.cardProjetoContent}>
-          <div className={styles.textoContent}>
-            <h2 className={styles.tituloProjeto}>PROADI-SUS</h2>
-            <h3 className={styles.subtituloProjeto}>Saúde em nossas mãos</h3>
+      {/* Sessão 2 — PROADI-SUS (TEXTO à ESQUERDA, imagem à DIREITA) */}
+      <section
+        ref={(el) => (sectionsRef.current[1] = el)}
+        className={`${styles.section} ${styles.imageRight}`}
+      >
+        <div className={`${styles.textWrapper} ${styles.fromLeftDelay}`}>
+          <h2>PROADI-SUS</h2>
+          <p>
+            Iniciativa de desenvolvimento e inovação em saúde, apoiando a rede pública
+            com capacitação, tecnologia e conhecimento. Explique objetivos e alcance.
+          </p>
 
-            <div className={styles.textoJustificado}>
-              <p>
-                O hospital é instrumental de garantir Avalia Superior do Brasil e a República. É a saúde de Núcleo Prado, paciente científico e dos domínios linguísticos.
-              </p>
-              <p>
-                Apresentação de escolha horária de participação com os saldos da ambulância, promovendo o aumento de todos os valores e todas características das mãos.
-              </p>
-            </div>
+          <button className={styles.ctaButton}>Saiba mais</button>
+        </div>
 
-            <div className={styles.botaoContainer}>
-              <Link to="/projetos/proadi-sus" className={styles.botao}>
-                Saiba mais...
-              </Link>
-            </div>
+        <div className={`${styles.imageWrapper} ${styles.fromRight}`}>
+          <div className={styles.imageFrame}>
+            {/* troque para sua imagem real */}
+            <img src="proadi.jpg" alt="PROADI SUS" />
           </div>
-
-          <img 
-            src="proadi.jpg" 
-            alt="Projeto PROADI-SUS" 
-            className={styles.imagemFullHeight} 
-          />
         </div>
       </section>
-    </section>
+    </div>
   );
 }
 
