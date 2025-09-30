@@ -130,6 +130,24 @@ const noticias = [
       "Thiago Gaspar - Casa Civil - Foto",
     ],
   },
+  {
+    id: 4,
+    imagem: "/image.jpg",
+    titulo: "teste 3",
+    data: "28 DE JULHO DE 2023 - 21:16",
+    texto: `Texto aqui.`,
+    tags: [
+      "Ficouro-Sul",
+      "Cirurgias Eletivas",
+      "Compromisso",
+      "Governo Do Estado",
+      "Tratamento De Câncer",
+    ],
+    autores: [
+      "Lorista Felido - Ascron Casa Civil - Foto",
+      "Thiago Gaspar - Casa Civil - Foto",
+    ],
+  },
 ];
 
 export default noticias;

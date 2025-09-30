@@ -10,10 +10,10 @@ const noticias = [
   },
   {
     id: 2,
-    imagem: "/estado.jpg",
-    titulo: "Camas Hospitalares com Balança: onde e quando usar?",
+    imagem: "image.jpg",
+    titulo: "image",
     data: "24/10/2024",
-    texto: "Diferentes propósitos para as camas, um único objetivo na qualidade do cuidado ao paciente..."
+    texto: "Texto aqui"
   },
   {
     id: 3,

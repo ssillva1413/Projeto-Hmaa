@@ -35,6 +35,9 @@ function Noticias() {
           />
           <div className={styles.textoContainer}>
             <p className={styles.textoPrincipal}>{noticiaPrincipal.texto}</p>
+            <Link to={`/noticias/${noticiaPrincipal.id}`} className={styles.saibaMais}>
+              Leia mais →
+            </Link>
           </div>
         </div>
       </div>
@@ -56,7 +59,7 @@ function Noticias() {
                 <h3 className={styles.cardTitulo}>{item.titulo}</h3>
                 <p className={styles.cardData}>{item.data}</p>
                 <p className={styles.cardTexto}>{item.texto}</p>
-                <Link to={`/noticias/${index + 1}`} className={styles.leiaMais}>
+                <Link to={`/noticias/${item.id}`} className={styles.leiaMais}>
                   Leia mais →
                 </Link>
               </div>
