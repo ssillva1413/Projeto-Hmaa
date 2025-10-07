@@ -1,63 +1,30 @@
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
 import React, { useState, useEffect, useRef } from "react";
-
-import { videos, cards } from "./Data/homeData";
+import { videos } from "./Data/homeData";
 import noticias from "./Data/noticias";
 
 const Home = () => {
   const [currentVideo, setCurrentVideo] = useState(0);
-
-  // refs para animação on scroll
   const bannerRef = useRef(null);
-  const cardRef = useRef(null);
 
   useEffect(() => {
     const videoElement = document.getElementById("videoPlayer");
-
     const handleEnded = () => {
       setCurrentVideo((prev) => (prev + 1) % videos.length);
     };
 
-    if (videoElement) {
-      videoElement.addEventListener("ended", handleEnded);
-    }
-
+    if (videoElement) videoElement.addEventListener("ended", handleEnded);
     return () => {
-      if (videoElement) {
-        videoElement.removeEventListener("ended", handleEnded);
-      }
+      if (videoElement) videoElement.removeEventListener("ended", handleEnded);
     };
   }, [currentVideo]);
 
-  // Animações on scroll
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add(styles.animate);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    if (bannerRef.current) observer.observe(bannerRef.current);
-    if (cardRef.current) observer.observe(cardRef.current);
-
-    return () => {
-      if (bannerRef.current) observer.unobserve(bannerRef.current);
-      if (cardRef.current) observer.unobserve(cardRef.current);
-    };
-  }, []);
-
-  // últimas notícias
   const ultimasNoticias = noticias.slice(0, 4);
 
   return (
     <>
-      {/* Seção 1: Banner */}
+      {/* ===== Seção 1: Banner ===== */}
       <section className={styles.sectionBanner} ref={bannerRef}>
         <video
           key={currentVideo}
@@ -71,30 +38,8 @@ const Home = () => {
         </video>
       </section>
 
-      {/* Seção 2: Mensagem + Cartão */}
-      <section className={styles.sectionMessage} ref={cardRef}>
-        <div className={styles.cardsContainer}>
-          {cards.map((card) =>
-            card.isExternal ? (
-              <Link
-                to={card.link}
-                key={card.id}
-                className={styles.card}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className={styles.cardIcon}>{card.icon}</div>
-                <h3>{card.title}</h3>
-              </Link>
-            ) : (
-              <Link to={card.link} key={card.id} className={styles.card}>
-                <div className={styles.cardIcon}>{card.icon}</div>
-                <h3>{card.title}</h3>
-              </Link>
-            )
-          )}
-        </div>
-
+      {/* ===== Seção 2: Mensagem + Cartão ===== */}
+      <section className={styles.sectionMessage}>
         <div className={styles.messageSection}>
           <div className={styles.message}>
             <h2>O cuidado<br />vem de casa!</h2>
@@ -123,7 +68,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Seção 3: Últimas Notícias */}
+      {/* ===== Seção 3: Últimas Notícias ===== */}
       <section className={styles.sectionNews}>
         <div className={styles.newsHeader}>
           <div className={styles.newsDivider}>
@@ -153,7 +98,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Seção 4: Localização */}
+      {/* ===== Seção 4: Localização ===== */}
       <section className={styles.section2}>
         <div className={styles.locationHeader}>
           <div className={styles.sectionDivider}>
