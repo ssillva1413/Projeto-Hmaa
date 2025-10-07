@@ -17,21 +17,24 @@
   max-width: 1200px;
   width: 90%;
   padding: 2.5rem;
-  background: white;
+  background: rgba(255, 255, 255, 0.7); /* fundo translúcido */
+  border: none; /* sem borda */
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  box-shadow: none; /* sem sombra fixa */
+  backdrop-filter: blur(6px); /* leve efeito vidro fosco */
+  transition: all 0.3s ease;
 }
 
 .bio:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* leve sombra flutuante */
+  background: rgba(255, 255, 255, 0.8); /* brilho sutil no hover */
 }
 
 .hmaa {
   width: 400px;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   object-fit: cover;
 }
 
@@ -159,3 +162,4 @@
     height: 250px;
   }
 }
+  

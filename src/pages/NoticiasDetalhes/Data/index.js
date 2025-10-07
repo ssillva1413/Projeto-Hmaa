@@ -148,6 +148,7 @@ const noticias = [
       "Thiago Gaspar - Casa Civil - Foto",
     ],
   },
+  
 ];
 
 export default noticias;

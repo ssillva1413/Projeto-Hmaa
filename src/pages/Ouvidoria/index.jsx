@@ -16,8 +16,26 @@ function Ouvidoria() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Dados enviados:", form);
-    // aqui futuramente conectamos com o back (igual ao modelo de autenticação)
+    try {
+      const resp = await fetch("http://localhost:5000/api/ouvidoria", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const result = await resp.json();
+
+      if (resp.ok) {
+        alert(result.message || "Manifestação enviada com sucesso!");
+        // limpa o form
+        setForm({ nome: "", tipo: "", setor: "", descricao: "" });
+      } else {
+        alert("Erro: " + (result.error || "Falha ao enviar"));
+      }
+    } catch (error) {
+      console.error("Erro na requisição:", error);
+      alert("Não foi possível enviar. Verifique sua conexão com o servidor.");
+    }
   };
 
   return (
@@ -31,7 +49,8 @@ function Ouvidoria() {
           <p className={styles.description}>
             Nossa ouvidoria é o canal aberto para ouvir você. Aqui você pode
             registrar sugestões, elogios, dúvidas ou reclamações de forma simples
-            e rápida.
+            e rápida. Sua participação é essencial para que possamos melhorar
+            continuamente os nossos serviços.
           </p>
         </div>
 
@@ -42,7 +61,7 @@ function Ouvidoria() {
             alt="Logo do Hospital"
             className={styles.logo}
           />
-          
+
           <form onSubmit={handleSubmit} className={styles.form}>
             {/* Identificação */}
             <label htmlFor="nome">Identificação</label>

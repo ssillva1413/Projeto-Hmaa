@@ -26,21 +26,26 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* centraliza a imagem */
+  justify-content: flex-start;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .imageArea img {
-  max-width: 100%;
+  max-width: 70%; /* imagem mais proporcional */
   height: auto;
   border-radius: 12px;
 }
 
 .description {
-  margin-top: 1rem;
-  font-size: 1rem;
+  margin-top: 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.8; /* espaçamento maior */
   color: #444;
-  text-align: center;
-  max-width: 400px;
+  text-align: justify; /* ocupa toda largura */
+  max-width: 100%;
+  padding: 0 1rem; /* respiro lateral */
 }
 
 .formArea {
@@ -52,10 +57,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 450px;
+  margin: 0 auto;
 }
 
 .logo {
-  width: 120px; /* logo maior */
+  width: 140px; /* logo maior */
   margin-bottom: 1rem;
 }
 
@@ -116,9 +123,38 @@
 
   .formArea {
     width: 100%;
+    max-width: 500px;
+  }
+
+  .imageArea {
+    max-width: 100%;
+  }
+
+  .imageArea img {
+    max-width: 80%;
   }
 
   .description {
+    padding: 0 0.5rem;
     text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .formArea {
+    padding: 1.5rem;
+  }
+
+  .logo {
+    width: 120px;
+  }
+
+  .form button {
+    padding: 10px;
+    font-size: 0.95rem;
   }
 }
