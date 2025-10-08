@@ -3,10 +3,12 @@ import styles from "./Home.module.css";
 import React, { useState, useEffect, useRef } from "react";
 import { videos } from "./Data/homeData";
 import noticias from "./Data/noticias";
+import ScrollReveal from "scrollreveal";
 
 const Home = () => {
   const [currentVideo, setCurrentVideo] = useState(0);
   const bannerRef = useRef(null);
+  const promoCardRef = useRef(null); // ✅ referência ao card do cartão
 
   useEffect(() => {
     const videoElement = document.getElementById("videoPlayer");
@@ -19,6 +21,20 @@ const Home = () => {
       if (videoElement) videoElement.removeEventListener("ended", handleEnded);
     };
   }, [currentVideo]);
+
+  // ✅ Efeito ScrollReveal apenas no card do Cartão
+  useEffect(() => {
+  ScrollReveal().reveal(`.${styles.promoCard}`, {
+    origin: "bottom",
+    distance: "90px",   // movimento mais longo
+    duration: 1800,     // animação mais lenta
+    delay: 400,         // entra com pequeno atraso
+    easing: "cubic-bezier(0.5, 0, 0, 1)", // efeito suave e elegante
+    reset: false,       // não reaparece ao rolar pra cima
+    opacity: 0,
+  });
+}, []);
+
 
   const ultimasNoticias = noticias.slice(0, 4);
 
@@ -42,22 +58,31 @@ const Home = () => {
       <section className={styles.sectionMessage}>
         <div className={styles.messageSection}>
           <div className={styles.message}>
-            <h2>O cuidado<br />vem de casa!</h2>
+            <h2>
+              O cuidado
+              <br />
+              vem de casa!
+            </h2>
             <h3>
-              Um ambiente seguro e atencioso<br />
-              onde você se sente acolhido desde<br />
+              Um ambiente seguro e atencioso
+              <br />
+              onde você se sente acolhido desde
+              <br />
               o primeiro momento.
             </h3>
           </div>
 
-          <Link to="/cartão" className={styles.promoCard}>
+          {/* ✅ ScrollReveal aplicado somente neste card */}
+          <Link to="/cartão" className={styles.promoCard} ref={promoCardRef}>
             <div className={styles.promoContent}>
               <h3>
                 Saiba como <br />
                 <strong>
-                  o Cartão Popular<br /> da Casa de Saúde
+                  o Cartão Popular
+                  <br /> da Casa de Saúde
                 </strong>
-                <br /> pode te ajudar<br /> no <strong>HMAA</strong>
+                <br /> pode te ajudar
+                <br /> no <strong>HMAA</strong>
               </h3>
 
               <div className={styles.promoImage}>
