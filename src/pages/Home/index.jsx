@@ -30,7 +30,7 @@ const Home = () => {
     duration: 1800,     // animação mais lenta
     delay: 400,         // entra com pequeno atraso
     easing: "cubic-bezier(0.5, 0, 0, 1)", // efeito suave e elegante
-    reset: false,       // não reaparece ao rolar pra cima
+    reset: true,       // não reaparece ao rolar pra cima
     opacity: 0,
   });
 }, []);
