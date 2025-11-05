@@ -1,57 +1,95 @@
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
 import React, { useState, useEffect, useRef } from "react";
-import { videos } from "./Data/homeData";
 import noticias from "./Data/noticias";
 import ScrollReveal from "scrollreveal";
 
 const Home = () => {
-  const [currentVideo, setCurrentVideo] = useState(0);
+  const [currentBanner, setCurrentBanner] = useState(0);
   const bannerRef = useRef(null);
-  const promoCardRef = useRef(null); // ✅ referência ao card do cartão
+  const promoCardRef = useRef(null);
 
+  const banners = [
+    "/carrossel 1.jpeg",
+    "/carrossel 2.jpeg",
+    "/carrossel 3.jpeg",
+    "/carrossel 4.jpeg",
+  ];
+
+  // ✅ Troca automática dos banners
   useEffect(() => {
-    const videoElement = document.getElementById("videoPlayer");
-    const handleEnded = () => {
-      setCurrentVideo((prev) => (prev + 1) % videos.length);
-    };
+    const interval = setInterval(() => {
+      setCurrentBanner((prev) => (prev + 1) % banners.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [banners.length]);
 
-    if (videoElement) videoElement.addEventListener("ended", handleEnded);
-    return () => {
-      if (videoElement) videoElement.removeEventListener("ended", handleEnded);
-    };
-  }, [currentVideo]);
+  const prevSlide = () => {
+    setCurrentBanner((prev) =>
+      prev === 0 ? banners.length - 1 : prev - 1
+    );
+  };
 
-  // ✅ Efeito ScrollReveal apenas no card do Cartão
+  const nextSlide = () => {
+    setCurrentBanner((prev) => (prev + 1) % banners.length);
+  };
+
+  // ✅ ScrollReveal apenas no card do Cartão
   useEffect(() => {
-  ScrollReveal().reveal(`.${styles.promoCard}`, {
-    origin: "bottom",
-    distance: "90px",   // movimento mais longo
-    duration: 1800,     // animação mais lenta
-    delay: 400,         // entra com pequeno atraso
-    easing: "cubic-bezier(0.5, 0, 0, 1)", // efeito suave e elegante
-    reset: true,       // não reaparece ao rolar pra cima
-    opacity: 0,
-  });
-}, []);
-
+    ScrollReveal().reveal(`.${styles.promoCard}`, {
+      origin: "bottom",
+      distance: "90px",
+      duration: 1800,
+      delay: 400,
+      easing: "cubic-bezier(0.5, 0, 0, 1)",
+      reset: true,
+      opacity: 0,
+    });
+  }, []);
 
   const ultimasNoticias = noticias.slice(0, 4);
 
   return (
     <>
-      {/* ===== Seção 1: Banner ===== */}
+      {/* ===== Seção 1: Carrossel ===== */}
       <section className={styles.sectionBanner} ref={bannerRef}>
-        <video
-          key={currentVideo}
-          id="videoPlayer"
-          autoPlay
-          muted
-          className={styles.video}
-        >
-          <source src={videos[currentVideo]} type="video/mp4" />
-          Seu navegador não suporta vídeos em MP4.
-        </video>
+        <div className={styles.carousel}>
+          {banners.map((banner, index) => (
+            <div
+              key={index}
+              className={`${styles.slide} ${
+                index === currentBanner ? styles.active : ""
+              }`}
+            >
+              <img src={banner} alt={`Banner ${index + 1}`} />
+            </div>
+          ))}
+
+          <button
+            className={`${styles.arrow} ${styles.left}`}
+            onClick={prevSlide}
+          >
+            &#10094;
+          </button>
+          <button
+            className={`${styles.arrow} ${styles.right}`}
+            onClick={nextSlide}
+          >
+            &#10095;
+          </button>
+
+          <div className={styles.dots}>
+            {banners.map((_, index) => (
+              <span
+                key={index}
+                className={`${styles.dot} ${
+                  index === currentBanner ? styles.activeDot : ""
+                }`}
+                onClick={() => setCurrentBanner(index)}
+              ></span>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* ===== Seção 2: Mensagem + Cartão ===== */}
@@ -72,7 +110,6 @@ const Home = () => {
             </h3>
           </div>
 
-          {/* ✅ ScrollReveal aplicado somente neste card */}
           <Link to="/cartão" className={styles.promoCard} ref={promoCardRef}>
             <div className={styles.promoContent}>
               <h3>
