@@ -10,7 +10,7 @@ function HeaderInfo() {
       <div className={styles.ouvidoria}>
         <FaHeadset className={styles.ouvidoriaIcon} />
         <Link to="/ouvidoria" className={styles.ouvidoriaLink}>
-          Ouvidoria
+         Fale Conosco
         </Link>
       </div>
 

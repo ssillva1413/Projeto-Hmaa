@@ -79,7 +79,7 @@ function Especialidades() {
   return (
     <section
       className={styles.background}
-      style={{ backgroundImage: "url('/bg.JPEG')" }}
+      /*style={{ backgroundImage: "url('/bg.JPEG')" }}*/
     >
       <div className={styles.fundoTitulo}>
         <h2 className={styles.tituloCinza}>Conheça nossas</h2>

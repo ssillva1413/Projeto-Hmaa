@@ -7,7 +7,7 @@
 /* ===== SEÇÃO 1: BANNER (CARROSSEL) ===== */
 .sectionBanner {
   width: 100%;
-  height: 70vh;
+  height: 60vh;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -35,6 +35,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center right;
+ 
 }
 
 .active {
@@ -99,6 +101,7 @@
 }
 
 /* ===== SEÇÃO DE MENSAGEM E CARTÃO ===== */
+
 .messageSection {
   display: flex;
   justify-content: space-between;

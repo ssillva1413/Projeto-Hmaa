@@ -1,6 +1,6 @@
 const noticias = [
   {
-    id: 1,
+    id: 4,
     imagem: "/estado.jpg",
     titulo: "Governo do Ceará reforça compromisso com realização de cirurgias eletivas e tratamento do câncer na Região Centro-Sul",
     data: "25 DE JULHO DE 2023 - 21:16",
@@ -10,10 +10,10 @@ const noticias = [
   },
   {
     id: 2,
-    imagem: "estado.jpg",
-    titulo: "Governo do Ceará reforça compromisso com realização de cirurgias eletivas e tratamento do câncer na Região Centro-Sul",
-    data: "24/10/2024",
-    texto: "Em Iguatu, no Centro-Sul cearense, o Hospital e Maternidade Agenor Araújo (HMAA) está credenciado desde maio deste ano para atender pacientes dentro do Plano Estadual de Redução das Filas de Cirurgias Eletivas, Exames Complementares e Consultas Especializadas. Até o momento, 110 procedimentos foram realizados na unidade. Na tarde desta terça-feira (25), o governador Elmano de Freitas visitou o Hospital, acompanhado de autoridades, e reforçou a parceria para ampliar acesso ao tratamento do câncer."
+    imagem: "uti1.jpeg",
+    titulo: "UTI Pediátrica do Hospital e Maternidade Agenor Araújo é inaugurada com a participação da secretária estadual da Saúde Tânia Mara",
+    data: "18/10/2025",
+    texto: "Em Iguatu, no Centro-Sul cearense, o Hospital e Maternidade Agenor Araújo (HMAA) Mais um marco histórico para a saúde de Iguatu com inauguração da Unidade de Terapia Intensiva Pediátrica – UTI do Hospital e Maternidade Agenor Araújo, ‘Casa de Saúde’, como é conhecida a unidade.está credenciado desde maio deste ano para atender pacientes dentro do Plano Estadual de Redução das Filas de Cirurgias Eletivas, Exames Complementares e Consultas Especializadas. Até o momento, 110 procedimentos foram realizados na unidade. Na tarde desta terça-feira (25), o governador Elmano de Freitas visitou o Hospital, acompanhado de autoridades, e reforçou a parceria para ampliar acesso ao tratamento do câncer."
   },
   {
     id: 3,

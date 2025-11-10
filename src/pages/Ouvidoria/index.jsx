@@ -40,14 +40,14 @@ function Ouvidoria() {
 
   return (
     <div className={styles.page}>
-      <h1 className={styles.title}>Ouvidoria</h1>
+      <h1 className={styles.title}>Fale Conosco</h1>
 
       <div className={styles.ouvidoriaContainer}>
         {/* Imagem + descrição */}
         <div className={styles.imageArea}>
           <img src="ouvidoria.png" alt="Atendente da Ouvidoria" />
           <p className={styles.description}>
-            Nossa ouvidoria é o canal aberto para ouvir você. Aqui você pode
+            Nossa central de atendimento é o canal aberto para ouvir você. Aqui você pode
             registrar sugestões, elogios, dúvidas ou reclamações de forma simples
             e rápida. Sua participação é essencial para que possamos melhorar
             continuamente os nossos serviços.

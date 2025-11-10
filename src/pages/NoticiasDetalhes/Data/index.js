@@ -1,8 +1,111 @@
 import { Subtitles } from "lucide-react";
 
 const noticias = [
-  {
+
+   {
     id: 1,
+    imagem: "/estado.jpg",
+    titulo: "teste 1",
+    data: "24/10/2024",
+    texto: `Texto aqui.`,
+    tags: ["Equipamentos", "Hospitalares", "Inovação"],
+    autores: ["Equipe SC Medical"],
+  },
+   {
+    id: 2,
+    titulo:
+      "UTI Pediátrica do Hospital e Maternidade Agenor Araújo é inaugurada com a participação da secretária estadual da Saúde Tânia Mara",
+    data: "18 DE OUTUBRO DE 2025",
+    conteudo: [
+       {
+        tipo: "imagem",
+        valor: "/uti1.jpeg",
+      },
+      {
+        tipo: "texto",
+        valor: `O evento aconteceu no domingo, 12, com a presença da secretária da Saúde do Estado do Ceará, Tânia Mara. O novo equipamento conta
+         com dez leitos, conforme apresentado. O espaço moderno passa a oferecer maior segurança para a saúde na região.`,
+      },  
+      {
+        tipo: "texto",
+        valor: `A secretária da Saúde do Ceará, Tânia Mara, classificou como um momento histórico a instalação da UTI Pediátrica em Iguatu, como 
+        referência e servirá de apoio à rede pública estadual de saúde. “Essa UTI vai ajudar a salvar muitas crianças, vai entregar qualidade para 
+        nossa população, conforto e segurança para os pais e nossas crianças. O governador Elmano de Freitas assegurou o custeio dessa UTI, que são
+         R$ 480 mil mensais.”, declarou a gestora, que na ocasião representou o governo do Estado. “Assim que recebemos essa proposta, nós conversamos
+          e o governador Elmano de Freitas assegurou que a Secretaria da Saúde repasse mensalmente R$ 480 mil para custear, até que a UTI seja habilitada
+           pelo Governo Federal, que vai passar a diminuir o custeio do Estado que cai para R$ 300 mil e o restante do Governo Federal. Mas é um 
+           dinheiro que vai ficar para sempre, para manter esse unidade, essa estrutura que é fundamental para nossa população”, pontuou Tânia Mara.`,
+      },
+      
+      {
+        tipo: "texto",
+        valor: `A Casa de Saúde foi fundada pelo médico Agenor Araújo. Seus familiares passam o legado a cada geração. O deputado Agenor Neto falou da importância
+         desse momento. “Esse foi o maior prêmio que as crianças poderiam receber, essa UTI Pediátrica, essa unidade vai salvar muitas vidas. Era um sonho de muito
+          tempo de meu pai (Dr. José Ilo Dantas), tem um significado muito grande. Estou feliz em ter unido forças, recursos e decisões políticas para que pudéssemos
+           ter vivenciado esse momento, no dia das Crianças, vai ficar marcado e na história essa UTI Pediátrica do Hospital Agenor Araújo”, afirmou o parlamentar,
+            que ao lado dos filhos integra a direção da unidade, Victor Oliveira, estudante de Medicina, e do engenheiro civil Ilo Neto.`,
+      },
+      
+      {
+        tipo: "texto",
+        valor: `Logo após a inauguração, conforme anunciado, na segunda-feira, 13, a UTI Pediátrica passou a funcionar. Andrezza Saraiva, diretora do hospital, destacou
+         a importância desse feito. “Momento muito importante essa inauguração da primeira UTI Pediátrica da Região Centro-Sul, que vai ser referência para quase meio 
+         milhão de habitantes. A gente sabe o tamanho da importância para as famílias ter um equipamento pra possibilitar maior acesso e garantir essa assistência segura
+          e de qualidade para nossas crianças. Então, é um momento de grande gratidão para todos que fazem parte da Casa de Saúde, todos os apoiadores também que estão juntos
+           empenhados para essa entrega. A UTI tem dez leitos e está destinada ao atendimento de crianças a partir do vigésimo nono dia de nascida até os 14 anos. O acesso é 
+           referenciado pela rede de regulação do Estado do Ceará, através do sistema e regulação estadual, que encaminha para a unidade. Passamos a ter mais essa oportunidade
+            de acesso à saúde para nossas crianças”, disse.`,
+      },
+      {
+        tipo: "texto",
+        valor: `A diretoria da Casa de Saúde pontuou também que através do apoio do Governo do Estado, dos deputados estadual Agenor Neto, e federal Eunício Oliveira
+        , foi primordial para a instalação da unidade.`,
+      },
+      
+      {
+        tipo: "texto",
+        valor: `A solenidade contou também com as presenças do deputado estadual Felipe Aguiar, do federal Eunício Oliveira, autoridades estaduais, do município e convidados.`,
+      },
+       {
+        tipo: "imagem",
+        valor: "/uti2.jpeg",
+      },   
+      
+    ],
+    tags: [
+      "",
+      "",
+      "",
+      "",
+      "",
+    ],
+    autores: [
+      "",
+      "",
+    ],
+  },
+  {
+    id: 3,
+    imagem: "/image.jpg",
+    titulo: "teste 3",
+    data: "28 DE JULHO DE 2023 - 21:16",
+    texto: `Texto aqui.`,
+    tags: [
+      "Ficouro-Sul",
+      "Cirurgias Eletivas",
+      "Compromisso",
+      "Governo Do Estado",
+      "Tratamento De Câncer",
+    ],
+    autores: [
+      "Lorista Felido - Ascron Casa Civil - Foto",
+      "Thiago Gaspar - Casa Civil - Foto",
+    ],
+  },
+
+
+  {
+    id: 4,
     titulo:
       "Governo do Ceará reforça compromisso com realização de cirurgias eletivas e tratamento do câncer na Região Centro-Sul",
     data: "28 DE JULHO DE 2023 - 21:16",
@@ -103,51 +206,8 @@ const noticias = [
       "Thiago Gaspar - Casa Civil - Foto",
     ],
   },
-  {
-    id: 2,
-    imagem: "/estado.jpg",
-    titulo: "teste 1",
-    data: "24/10/2024",
-    texto: `Texto aqui.`,
-    tags: ["Equipamentos", "Hospitalares", "Inovação"],
-    autores: ["Equipe SC Medical"],
-  },
-  {
-    id: 3,
-    imagem: "/image.jpg",
-    titulo: "teste 2",
-    data: "28 DE JULHO DE 2023 - 21:16",
-    texto: `Texto aqui.`,
-    tags: [
-      "Ficouro-Sul",
-      "Cirurgias Eletivas",
-      "Compromisso",
-      "Governo Do Estado",
-      "Tratamento De Câncer",
-    ],
-    autores: [
-      "Lorista Felido - Ascron Casa Civil - Foto",
-      "Thiago Gaspar - Casa Civil - Foto",
-    ],
-  },
-  {
-    id: 4,
-    imagem: "/image.jpg",
-    titulo: "teste 3",
-    data: "28 DE JULHO DE 2023 - 21:16",
-    texto: `Texto aqui.`,
-    tags: [
-      "Ficouro-Sul",
-      "Cirurgias Eletivas",
-      "Compromisso",
-      "Governo Do Estado",
-      "Tratamento De Câncer",
-    ],
-    autores: [
-      "Lorista Felido - Ascron Casa Civil - Foto",
-      "Thiago Gaspar - Casa Civil - Foto",
-    ],
-  },
+
+ 
   
 ];
 
