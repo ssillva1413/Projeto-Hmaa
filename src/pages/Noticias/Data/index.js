@@ -23,7 +23,7 @@ const noticias = [
     texto: "Texto aqui"
   },
   {
-    id: 4,
+    id: 1,
     imagem: "image.jpg",
     titulo: "Image",
     data: "03/05/2022",

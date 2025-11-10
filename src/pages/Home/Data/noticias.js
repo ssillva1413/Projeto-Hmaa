@@ -2,21 +2,21 @@
 
 const noticias = [
   {
-    id: 1,
+    id: 2,
      titulo: "UTI Pediátrica do Hospital e Maternidade Agenor Araújo é inaugurada com a participação da secretária estadual da Saúde Tânia Mara",
     data: "18/10/2025",
     resumo: "Mais um marco histórico para a saúde de Iguatu com inauguração da Unidade de Terapia Intensiva Pediátrica – UTI do Hospital e Maternidade Agenor Araújo, ‘Casa de Saúde’, como é conhecida a unidade.",
     imagem: "uti1.jpeg",
-    link: "/noticias/1"
+    link: "/noticias/2"
     
   },
   {
-    id: 2,
+    id: 1,
     titulo: "Teste 2",
     data: "10/03/2024",
     resumo: "Texto aqui",
     imagem: "Image2.jpg",
-    link: "/noticias/2"
+    link: "/noticias/1"
   },
   {
     id: 3,
