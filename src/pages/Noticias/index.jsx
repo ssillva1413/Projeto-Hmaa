@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Noticias.module.css";
 import { Link } from "react-router-dom";
-import noticias from "./Data/index.js"; // caminho corrigido
+import noticias from "./Data/index.js"; 
 
 function Noticias() {
   const [noticiaPrincipal, ...outrasNoticias] = noticias;
