@@ -10,22 +10,22 @@ const noticias = [
     link: "/noticias/2"
     
   },
-  {
-    id: 1,
-    titulo: "Teste 2",
-    data: "10/03/2024",
-    resumo: "Texto aqui",
-    imagem: "Image2.jpg",
-    link: "/noticias/1"
-  },
-  {
-    id: 3,
-    titulo: "Teste 3",
-    data: "05/03/2024",
-    resumo: "Texto aqui",
-    imagem: "Image3.jpg",
-    link: "/noticias/3"
-  },
+  //{
+    //id: 1,
+    //titulo: "",
+    //data: "",
+    //resumo: "",
+    //imagem: "Image2.jpg",
+    //link: "/noticias/1"
+  //},
+  //{
+    //id: 3,
+    //titulo: "Teste 3",
+    //data: "05/03/2024",
+    //resumo: "Texto aqui",
+    //imagem: "Image3.jpg",
+    //link: "/noticias/3"
+  //},
   {
     id: 4,
     titulo: "Governo do Ceará reforça compromisso com realização de cirurgias eletivas e tratamento do câncer na Região Centro-Sul",

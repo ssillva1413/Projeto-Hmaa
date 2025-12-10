@@ -43,7 +43,7 @@ function Header() {
           <Link to='/especialidades' onClick={toggleMenu}>ESPECIALIDADES</Link>
           <Link to='/cartão' onClick={toggleMenu}>CLINICA</Link>
           <Link to='/noticias' onClick={toggleMenu}>NOTICIAS</Link>
-          <Link to='/projetos' onClick={toggleMenu}>Portal da trasnparência</Link>
+          <Link to='/projetos' onClick={toggleMenu}>PORTAL DA TRANSPARÊNCIA</Link>
         </nav>
       </div>
 
