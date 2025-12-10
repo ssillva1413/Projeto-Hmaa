@@ -4,63 +4,50 @@
 
 .clinicaBanner {
   width: 100%;
-  height: 67vh;                 /* Aumentado um pouco para abrir mais a imagem */
+  height: 67vh;
   position: relative;
   overflow: hidden;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
-  /* ENCOSTAR NO HEADER */
   margin: 0;
   padding: 0;
-  margin-top: -55px;            /* Encosta no header */
-  padding-top: 155px;           /* Compensa o header fixo */
-}
-
-/* Imagem do banner */
-.clinicaBanner img {
-  position: absolute;
-  object-position: center -240px;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  margin-top: -55px;
+  padding-top: 155px;
+  background-image: url("estado.jpg");
+  background-size: cover;
+  background-position: center -240px;
+  background-repeat: no-repeat;
   filter: brightness(0.88);
 }
 
-/* OVERLAY — agora cobre TODO o banner */
+.clinicaBanner img {
+  display: none;
+}
+
 .bannerOverlay {
   position: absolute;
   inset: 0;
   z-index: 2;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  /* Centraliza o bloco de texto */
   padding-left: 80px;
-
-  /* Sombreamento total */
   background: linear-gradient(
     to right,
     rgba(255, 255, 255, 0.92) 0%,
     rgba(255, 255, 255, 0.82) 35%,
-    rgba(255, 255, 255, 0.60) 60%,
+    rgba(255, 255, 255, 0.6) 60%,
     rgba(255, 255, 255, 0.25) 80%,
     rgba(255, 255, 255, 0) 100%
   );
 }
 
-/* Bloco do texto dentro do overlay */
 .bannerContent {
   z-index: 3;
   max-width: 1100px;
 }
 
-/* Título */
 .bannerOverlay h1 {
   color: #188e5a;
   font-size: 3rem;
@@ -70,7 +57,6 @@
   max-width: 650px;
 }
 
-/* Texto */
 .bannerOverlay p {
   color: #333;
   font-size: 1.18rem;
@@ -78,9 +64,8 @@
   max-width: 700px;
 }
 
-
 /* ========================================================= */
-/* ================  IMAGEM PRINCIPAL  ===================== */
+/* ================= IMAGEM PRINCIPAL ====================== */
 /* ========================================================= */
 
 .clinicaImagemDestaque {
@@ -98,7 +83,6 @@
   object-fit: cover;
 }
 
-
 /* ========================================================= */
 /* ==================== MINIATURAS ========================= */
 /* ========================================================= */
@@ -108,17 +92,17 @@
   margin: 0 auto 3rem;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 1rem;
 }
 
 .thumb {
-  width: 120px;
+  width: 200px;
   height: 80px;
   overflow: hidden;
   border-radius: 6px;
   cursor: pointer;
-  transition: transform .25s ease;
+  transition: transform 0.25s ease;
 }
 
 .thumb:hover {
@@ -131,6 +115,194 @@
   object-fit: cover;
 }
 
+/* ========================================================= */
+/* =============   SEGUNDA SESSÃO — CARTÃO   ============== */
+/* ========================================================= */
+
+.cartaoSection {
+  width: 100%;
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.cartaoTitulo {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #188e5a;
+  text-align: center;
+}
+
+.cardVerdeTop {
+  background: #188e5a;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 14px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cardVermelho {
+  background: #d62828;
+  color: #fff;
+  padding: 1.2rem 2rem;
+  border-radius: 6px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  width: fit-content;
+  margin-top: -10px;
+  margin-left: auto;
+  margin-right: 0;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.cartaoImagem {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.cartaoImagem img {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.cardVerdeBottom {
+  background: #188e5a;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.cardLogo img {
+  width: 120px;
+}
+
+.cardContatos {
+  flex: 1;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.whatsapp {
+  font-size: 1.35rem;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.cardQrCode img {
+  width: 120px;
+  height: 120px;
+}
+
+/* ========================================================= */
+/* ===================== SESSÃO 3 ========================== */
+/* ========================================================= */
+
+.sessao3 {
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.sessao3Titulo {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #188e5a;
+  margin-bottom: 2rem;
+}
+
+.sessao3Cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.cardLeft {
+  background: #188e5a;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  width: 320px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.cardRight {
+  background: #188e5a;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  width: 320px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.cardLeft ul,
+.cardRight ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+.cardLeft li,
+.cardRight li {
+  margin-bottom: 10px;
+}
+
+.precoLeft {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.precoRight {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.imagemPessoa {
+  margin: 2.5rem 0 1rem;
+}
+
+.imagemPessoa img {
+  width: 100%;
+  max-width: 350px;
+}
+
+.odontologiaTexto {
+  font-size: 1.3rem;
+  margin: 1.5rem 0;
+  font-weight: 600;
+  color: #188e5a;
+}
+
+.cardEspecialidades {
+  background: #d62828;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 1rem;
+}
 
 /* ========================================================= */
 /* ================== RESPONSIVIDADE ======================= */
@@ -138,54 +310,44 @@
 
 @media (max-width: 992px) {
   .clinicaBanner {
-    margin-top: -50px;
-    padding-top: 150px;
     height: 55vh;
-  }
-
-  .bannerOverlay {
-    padding-left: 50px;
-  }
-
-  .bannerOverlay h1 {
-    font-size: 2.4rem;
+    background-position: center;
   }
 }
 
 @media (max-width: 768px) {
   .clinicaBanner {
     height: 48vh;
-    margin-top: -45px;
-    padding-top: 140px;
+    background-position: center;
   }
 
   .bannerOverlay {
     padding-left: 25px;
-    background: rgba(255, 255, 255, 0.93); /* Mobile mais uniforme */
+    background: rgba(255, 255, 255, 0.93);
   }
 
-  .bannerOverlay h1 {
-    font-size: 2rem;
+  .cartaoTitulo {
+    font-size: 1.8rem;
   }
 
-  .bannerOverlay p {
-    font-size: 1rem;
+  .cardVerdeBottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cardVermelho {
+    margin-left: 0;
+    align-self: center;
   }
 }
 
 @media (max-width: 480px) {
   .clinicaBanner {
     height: 40vh;
-    margin-top: -40px;
-    padding-top: 130px;
   }
 
-  .bannerOverlay h1 {
+  .cartaoTitulo {
     font-size: 1.6rem;
-  }
-
-  .bannerOverlay p {
-    font-size: 0.95rem;
   }
 
   .thumb {

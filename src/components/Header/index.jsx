@@ -24,7 +24,7 @@ function Header() {
         <Link to='/especialidades'>ESPECIALIDADES</Link>
         <Link to='/cartão'>CLINICA</Link>
         <Link to='/noticias'>NOTICIAS</Link>
-        <Link to='/projetos'>PROJETOS</Link>
+        <Link to='/projetos'>PORTAL DA TRANSPARÊNCIA</Link>
       </nav>
 
       {/* Ícone hambúrguer (mobile) */}
@@ -43,7 +43,7 @@ function Header() {
           <Link to='/especialidades' onClick={toggleMenu}>ESPECIALIDADES</Link>
           <Link to='/cartão' onClick={toggleMenu}>CLINICA</Link>
           <Link to='/noticias' onClick={toggleMenu}>NOTICIAS</Link>
-          <Link to='/projetos' onClick={toggleMenu}>PROJETOS</Link>
+          <Link to='/projetos' onClick={toggleMenu}>Portal da trasnparência</Link>
         </nav>
       </div>
 

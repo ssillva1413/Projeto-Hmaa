@@ -45,10 +45,10 @@ const Footer = () => {
               <Link to="/noticias" onClick={(e) => handleLinkClick(e, "/noticias")}>Notícias</Link>
             </li>
             <li>
-              <Link to="/projetos" onClick={(e) => handleLinkClick(e, "/projetos")}>Projetos</Link>
+              <Link to="/projetos" onClick={(e) => handleLinkClick(e, "/projetos")}>Portal da Transparência</Link>
             </li>
             <li>
-              <Link to="/cartão" onClick={(e) => handleLinkClick(e, "/cartão")}>Clínica/Cartão</Link>
+              <Link to="/cartão" onClick={(e) => handleLinkClick(e, "/cartão")}>Clínica Casa de Saúde</Link>
             </li>
           </ul>
         </div>
