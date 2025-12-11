@@ -174,6 +174,16 @@
   object-fit: cover;
 }
 
+/* ========================================================= */
+/* ===================== CARD FINAL ======================== */
+/* ========================================================= */
+
+.cardFinal {
+  max-width: 1100px;
+  margin: 4rem auto 6rem; /* espaço antes do footer */
+  padding: 0 20px;
+}
+
 .cardVerdeBottom {
   background: #188e5a;
   color: #fff;
@@ -208,6 +218,21 @@
   height: 120px;
 }
 
+.qrTitulo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  display: block;
+  text-align: center;
+}
+
+.cardQrCode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* ========================================================= */
 /* ===================== SESSÃO 3 ========================== */
 /* ========================================================= */
@@ -229,23 +254,15 @@
 .sessao3Cards {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 3rem;
   flex-wrap: wrap;
 }
 
-.cardLeft {
-  background: #188e5a;
-  color: #fff;
-  padding: 2rem;
-  border-radius: 16px;
-  width: 320px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-}
-
+.cardLeft,
 .cardRight {
   background: #188e5a;
   color: #fff;
-  padding: 2rem;
+  padding: 2.3rem;
   border-radius: 16px;
   width: 320px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.15);
@@ -265,93 +282,83 @@
   margin-bottom: 10px;
 }
 
-.precoLeft {
-  color: #fff;
-  font-size: 1.8rem;
-  font-weight: 700;
-}
-
+.precoLeft,
 .precoRight {
-  color: #fff;
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   font-weight: 700;
 }
 
-.imagemPessoa {
-  margin: 2.5rem 0 1rem;
+/* ======= NOVO BLOCO — ODONTO E 26 ESPECIALIDADES ======= */
+
+.sessaoOdontoBloco {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
-.imagemPessoa img {
-  width: 100%;
-  max-width: 350px;
-}
-
-.odontologiaTexto {
-  font-size: 1.3rem;
-  margin: 1.5rem 0;
+.cardOdonto {
+  background: #188e5a;
+  color: #fff;
+  padding: 1.4rem 2rem;
+  border-radius: 14px;
+  font-size: 1.25rem;
   font-weight: 600;
-  color: #188e5a;
+  width: fit-content;
+  max-width: 330px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.12);
 }
 
 .cardEspecialidades {
   background: #d62828;
   color: #fff;
-  padding: 1rem 2rem;
-  font-size: 1.4rem;
+  padding: 1.4rem 2rem;
+  font-size: 1.35rem;
   font-weight: 700;
-  border-radius: 6px;
-  display: inline-block;
-  margin-top: 1rem;
+  border-radius: 14px;
+  width: fit-content;
+  max-width: 330px;
+  display: flex;
+  justify-content: center;   /* Centraliza na horizontal */
+  align-items: center;       /* Centraliza na vertical */
+  text-align: center;        /* Garante quebra de linha centralizada */
 }
+
+.instagramLink {
+  margin: 6px 0;
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+  display: inline-block;
+}
+
+
 
 /* ========================================================= */
 /* ================== RESPONSIVIDADE ======================= */
 /* ========================================================= */
 
-@media (max-width: 992px) {
-  .clinicaBanner {
-    height: 55vh;
-    background-position: center;
-  }
-}
-
 @media (max-width: 768px) {
-  .clinicaBanner {
-    height: 48vh;
-    background-position: center;
+  .sessao3Cards {
+    gap: 1.5rem;
   }
 
-  .bannerOverlay {
-    padding-left: 25px;
-    background: rgba(255, 255, 255, 0.93);
+  .sessaoOdontoBloco {
+    flex-direction: column;
+    gap: 1rem;
   }
 
-  .cartaoTitulo {
-    font-size: 1.8rem;
+  .cardOdonto,
+  .cardEspecialidades,
+  .cardVerdeBottom {
+    width: 100%;
   }
 
   .cardVerdeBottom {
     flex-direction: column;
     text-align: center;
-  }
-
-  .cardVermelho {
-    margin-left: 0;
-    align-self: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .clinicaBanner {
-    height: 40vh;
-  }
-
-  .cartaoTitulo {
-    font-size: 1.6rem;
-  }
-
-  .thumb {
-    width: 80px;
-    height: 55px;
   }
 }

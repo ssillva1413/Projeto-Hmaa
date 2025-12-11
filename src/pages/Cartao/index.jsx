@@ -73,7 +73,7 @@ function Cartao() {
           </p>
         </div>
 
-        <div className={styles.cardVermelho} aria-hidden>
+        <div className={styles.cardVermelho}>
           <span>1 Titular</span>
           <strong style={{ marginTop: 6 }}>+ 4 dependentes</strong>
         </div>
@@ -81,73 +81,81 @@ function Cartao() {
         <div className={styles.cartaoImagem}>
           <img src="familia.jpeg" alt="Família Cartão Casa de Saúde" />
         </div>
-
-        <div className={styles.cardVerdeBottom}>
-          <div className={styles.cardLogo}>
-            <img src="logo.png" alt="Logo Clínica" />
-          </div>
-
-          <div className={styles.cardContatos}>
-            <p style={{ margin: 0, fontSize: 14 }}>Maiores informações:</p>
-            <p className={styles.whatsapp} style={{ margin: "6px 0" }}>
-              (88) 9 9298.7818
-            </p>
-            <p style={{ margin: 0, fontSize: 14 }}>Siga nosso Instagram:</p>
-            <p style={{ margin: "6px 0" }}>@clinicacasadesaude</p>
-          </div>
-
-          <div className={styles.cardQrCode}>
-            <img src="qrcode.png" alt="QR Code" />
-          </div>
-        </div>
       </section>
 
-      {/* ===================== SESSÃO 3 – NOVA ===================== */}
+      {/* ===================== SESSÃO 3 ===================== */}
       <section className={styles.sessao3}>
         <h2 className={styles.sessao3Titulo}>
           Mais descontos, mais saúde ao seu alcance!
         </h2>
 
         <div className={styles.sessao3Cards}>
-          {/* Card esquerdo */}
           <div className={styles.cardLeft}>
             <h3 className={styles.precoLeft}>A partir de R$ 19,90</h3>
-
             <ul>
-              <li>✔ Descontos em consultas com especialistas;</li>
+              <li>✔ Descontos em consultas com especialistas</li>
               <li>✔ Descontos em exames</li>
               <li>✔ Clube de vantagens</li>
-              <li>✔ Descontos em pequenas cirurgias.</li>
-             
+              <li>✔ Descontos em pequenas cirurgias</li>
             </ul>
           </div>
 
-          {/* Card direito */}
           <div className={styles.cardRight}>
             <h3 className={styles.precoRight}>R$ 49,90</h3>
-
             <ul>
-              <li>✔ Consultas ilimitadas</li>
-              <li>✔ Descontos especiais em exames</li>
-              <li>✔ Atendimento prioritário</li>
-              <li>✔ Benefícios ampliados</li>
-              <li>✔ Suporte clínico completo</li>
+              <li>✔ Descontos em consultas com especialistas</li>
+              <li>✔ Maior desconto em exames</li>
+              <li>✔ Clube de vantagens</li>
+              <li>✔ Clínico geral gratuito</li>
+              <li>✔ Descontos em cirurgias</li>
+              <li>✔ Descontos em partos</li>
+              <li>✔ Descontos em internações dia</li>
+              <li>✔ Descontos em atendimentos</li>
             </ul>
           </div>
         </div>
 
-        {/* Imagem da pessoa */}
-        <div className={styles.imagemPessoa}>
-          <img src="dr.jpeg" alt="Pessoa sorrindo" />
+        {/* CARDS ODONTO E 26 ESPECIALIDADES */}
+        <div className={styles.sessaoOdontoBloco}>
+          <div className={styles.cardOdonto}>
+            <p>✔ Agora temos atendimento odontológico disponível todos os dias!</p>
+          </div>
+
+          <div className={styles.cardEspecialidades}>+ de 26 especialidades</div>
         </div>
+      </section>
 
-        {/* Texto odontológico */}
-        <p className={styles.odontologiaTexto}>
-          Agora temos atendimento odontológico disponível todos os dias!
-        </p>
+      {/* ===================== CARD FINAL (MOVIDO) ===================== */}
+      <section className={styles.cardFinal}>
+        <div className={styles.cardVerdeBottom}>
+          <div className={styles.cardLogo}>
+            <img src="logo_cartao.jpeg" alt="Logo Clínica" />
+          </div>
 
-        {/* Card vermelho final */}
-        <div className={styles.cardEspecialidades}>+ de 26 especialidades</div>
+          <div className={styles.cardContatos}>
+            <p style={{ margin: 0, fontSize: 17 }}>Maiores informações:</p>
+            <p className={styles.whatsapp} style={{ margin: "6px 0" }}>
+              (88) 9 9298.7818
+            </p>
+            
+            <p style={{ margin: 0, fontSize: 18 }}>Siga nosso Instagram:</p>
+            <a
+              href="https://www.instagram.com/clinicacasadesaude/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.instagramLink}
+            >
+              @clinicacasadesaude
+            </a>
+
+          </div>
+
+           <div className={styles.cardQrCode}>
+          <span className={styles.qrTitulo}>Saiba mais</span>
+          <img src="qrcode.png" alt="QR Code" />
+          </div>
+
+        </div>
       </section>
     </>
   );
