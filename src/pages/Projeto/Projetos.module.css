@@ -1,19 +1,16 @@
-/* Garante que a página ocupe toda a tela */
 :global(body) {
   min-height: 100vh;
 }
 
-/* Container principal */
 .transparencia {
   width: 100%;
   max-width: 1200px;
-  min-height: 70vh; /* <<< mantém o conteúdo empurrando o footer */
+  min-height: 70vh;
   margin: 40px auto 80px;
   padding: 0 20px;
   box-sizing: border-box;
 }
 
-/* Título */
 .title {
   font-size: 2.6rem;
   font-weight: 700;
@@ -22,7 +19,6 @@
   position: relative;
 }
 
-/* linha abaixo do título */
 .title::after {
   content: "";
   display: block;
@@ -32,7 +28,6 @@
   margin-top: 12px;
 }
 
-/* Texto explicativo */
 .description {
   font-size: 1.25rem;
   color: #444;
@@ -41,7 +36,6 @@
   margin-bottom: 40px;
 }
 
-/* Link de download */
 .downloadLink {
   font-size: 1.25rem;
   color: #d90000;
@@ -56,7 +50,6 @@
   text-decoration: underline;
 }
 
-/* Responsivo */
 @media (max-width: 600px) {
   .title {
     font-size: 2rem;

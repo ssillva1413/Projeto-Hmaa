@@ -9,8 +9,7 @@ function Noticias() {
   return (
     <div className={styles.container}>
       <h1 className={styles.tituloPagina}>NOTÍCIAS</h1>
-      
-      {/* Notícia principal */}
+    
       <div className={styles.noticiaPrincipal}>
         <div className={styles.cabecalhoPrincipal}>
           <h2 className={styles.tituloPrincipal}>{noticiaPrincipal.titulo}</h2>
@@ -42,7 +41,6 @@ function Noticias() {
         </div>
       </div>
 
-      {/* Outras notícias */}
       <div className={styles.outrasNoticias}>
         <div className={styles.newsDivider1}>
           <h2 className={styles.tituloSecao}>ÚLTIMAS NOTÍCIAS</h2>
@@ -70,5 +68,4 @@ function Noticias() {
     </div>
   );
 }
-
 export default Noticias;

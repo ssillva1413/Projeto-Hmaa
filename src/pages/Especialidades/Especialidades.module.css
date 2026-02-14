@@ -1,5 +1,5 @@
 .background {
-  background-color:#D5D5D5;
+  background-color: #D5D5D5;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -23,9 +23,6 @@
   font-weight: 800;
 }
 
-/* =====================
-   Animação scroll
-   ===================== */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -40,17 +37,16 @@
 .card {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: stretch;
   background-color: white;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin: 20px auto;
   max-width: 1200px;
-  height: 260px;
+  height: 260px; /* MANTIDA */
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-  /* estado inicial invisível */
   opacity: 0;
   transform: translateY(40px);
 }
@@ -59,7 +55,6 @@
   animation: fadeInUp 0.8s ease forwards;
 }
 
-/* Hover no card */
 .card:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -75,7 +70,6 @@
   transition: transform 0.3s ease;
 }
 
-/* Zoom leve na imagem quando hover */
 .card:hover .imagem {
   transform: scale(1.05);
 }
@@ -86,6 +80,14 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
+}
+
+.texto h2 {
+  font-size: 26px;
+  margin-bottom: 12px;
+  line-height: 1.2;
+  word-break: break-word;
 }
 
 .texto p {
@@ -93,11 +95,13 @@
   color: #555;
   line-height: 1.5;
   text-align: justify;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 4; 
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-/* ===========================
-   RESPONSIVIDADE
-   =========================== */
 @media (max-width: 768px) {
   .tituloCinza {
     font-size: 18px;
@@ -109,7 +113,7 @@
 
   .card {
     flex-direction: column;
-    height: auto;
+    height: auto; 
     max-width: 95%;
   }
 
@@ -125,5 +129,6 @@
 
   .texto p {
     font-size: 14px;
+    -webkit-line-clamp: unset; 
   }
 }

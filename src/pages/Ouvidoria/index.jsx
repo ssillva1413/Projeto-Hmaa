@@ -27,7 +27,7 @@ function Ouvidoria() {
 
       if (resp.ok) {
         alert(result.message || "Manifestação enviada com sucesso!");
-        // limpa o form
+       
         setForm({ nome: "", tipo: "", setor: "", descricao: "" });
       } else {
         alert("Erro: " + (result.error || "Falha ao enviar"));
@@ -43,7 +43,6 @@ function Ouvidoria() {
       <h1 className={styles.title}>Fale Conosco</h1>
 
       <div className={styles.ouvidoriaContainer}>
-        {/* Imagem + descrição */}
         <div className={styles.imageArea}>
           <img src="ouvidoria.png" alt="Atendente da Ouvidoria" />
           <p className={styles.description}>
@@ -54,7 +53,6 @@ function Ouvidoria() {
           </p>
         </div>
 
-        {/* Formulário */}
         <div className={styles.formArea}>
           <img
             src="Novopage.jpg"
@@ -63,7 +61,6 @@ function Ouvidoria() {
           />
 
           <form onSubmit={handleSubmit} className={styles.form}>
-            {/* Identificação */}
             <label htmlFor="nome">Identificação</label>
             <input
               type="text"
@@ -74,7 +71,6 @@ function Ouvidoria() {
               onChange={handleChange}
             />
 
-            {/* Tipo de Manifestação */}
             <label htmlFor="tipo">Tipo de Manifestação</label>
             <select
               id="tipo"
@@ -91,7 +87,6 @@ function Ouvidoria() {
               <option value="informacao">Informação</option>
             </select>
 
-            {/* Setor */}
             <label htmlFor="setor">Setor</label>
             <select
               id="setor"
@@ -109,7 +104,6 @@ function Ouvidoria() {
               <option value="outro">Outro</option>
             </select>
 
-            {/* Descrição */}
             <label htmlFor="descricao">Descrição</label>
             <textarea
               id="descricao"
@@ -128,5 +122,4 @@ function Ouvidoria() {
     </div>
   );
 }
-
 export default Ouvidoria;

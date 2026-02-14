@@ -1,5 +1,3 @@
-// src/data/noticias.js
-
 const noticias = [
   {
     id: 2,
@@ -35,5 +33,4 @@ const noticias = [
     link: "/noticias/4"
   }
 ];
-
 export default noticias;

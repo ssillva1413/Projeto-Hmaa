@@ -43,7 +43,7 @@ html, body, #root {
   gap: 8px;
   margin: 15px 0;
   color: #ccc;
-  word-wrap: break-word; /* Evitar que o texto quebre de forma feia */
+  word-wrap: break-word;
 }
 
 .navigation ul {
@@ -113,7 +113,7 @@ html, body, #root {
 
   .information p {
     font-size: 14px;
-    word-wrap: normal; /* Garante que o texto no "Fale Conosco" não quebre mal */
+    word-wrap: normal; 
   }
 
   .icons ul {

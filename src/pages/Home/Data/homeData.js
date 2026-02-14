@@ -1,5 +1,3 @@
-// src/data/homeData.js
-
 const videos = ["/Banner01.mp4", "/Banner02.mp4"];
 
 const cards = [

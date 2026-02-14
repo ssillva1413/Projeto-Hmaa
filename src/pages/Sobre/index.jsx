@@ -1,11 +1,9 @@
 import style from "./Sobre.module.css"
 
-
 function Sobre (){
     return (
         
-        <>
-            
+        <>          
         <section className={style.sobre}>
           <div className={style.bio}>
             <img src="Novopage.jpg" alt="hmaa" className={style.hmaa} />
@@ -36,7 +34,6 @@ function Sobre (){
           </p>
           </div>
           </div>
-
         </section>
 
         <section className={style.video}>
@@ -50,12 +47,8 @@ function Sobre (){
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>
-        </section>
-
-     
-            
+        </section>          
         </>
     )
-
 }
 export default Sobre

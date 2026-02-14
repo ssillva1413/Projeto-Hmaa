@@ -14,29 +14,22 @@ import Ouvidoria from "./pages/Ouvidoria";
 
 function AppRoutes () {
     return(
-       <BrowserRouter>
-           
+       <BrowserRouter>          
                 <ScrollToTop />
-                <Routes>
-                    <Route path="/" element={<PageBase />}>
-                        <Route index element ={<Home />}></Route>
-                        <Route path="/noticias" element ={<Noticias />}></Route>
-                        <Route path="/sobre" element ={<Sobre />}></Route>
-                        <Route path="/especialidades" element ={<Especialidades />}></Route>
-                        <Route path="/projetos" element ={<Projeto />}></Route>
-                        <Route path="/cartão" element ={<Cartao />}></Route>
-                        <Route path="/*" element ={<Page404 />}></Route>
-                        <Route path="/noticias/:id" element={<NoticiasDetalhes />} /> 
-                         <Route path="/ouvidoria" element={<Ouvidoria />} />
-
-
-                    </Route>
-                    
-                </Routes>
-                 <WhatsAppButton />
-            
-           
-
+                   <Routes>
+                        <Route path="/" element={<PageBase />}>
+                            <Route index element ={<Home />}></Route>
+                            <Route path="/noticias" element ={<Noticias />}></Route>
+                            <Route path="/sobre" element ={<Sobre />}></Route>
+                            <Route path="/especialidades" element ={<Especialidades />}></Route>
+                            <Route path="/projetos" element ={<Projeto />}></Route>
+                            <Route path="/cartão" element ={<Cartao />}></Route>
+                            <Route path="/*" element ={<Page404 />}></Route>
+                            <Route path="/noticias/:id" element={<NoticiasDetalhes />} /> 
+                            <Route path="/ouvidoria" element={<Ouvidoria />} />
+                        </Route>                   
+                 </Routes>
+                 <WhatsAppButton />                      
        </BrowserRouter>
     )
 }

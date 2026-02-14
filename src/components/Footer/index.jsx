@@ -9,11 +9,10 @@ import styles from './Footer.module.css';
 const Footer = () => {
   const location = useLocation();
 
-  // Função para rolar até o topo da página
   const handleLinkClick = (e, path) => {
     if (location.pathname === path) {
-      // Se o link for para a mesma página, rolar até o topo
-      e.preventDefault(); // Impede a navegação normal
+      
+      e.preventDefault(); 
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
@@ -69,5 +68,4 @@ const Footer = () => {
     </footer>
   );
 };
-
 export default Footer;

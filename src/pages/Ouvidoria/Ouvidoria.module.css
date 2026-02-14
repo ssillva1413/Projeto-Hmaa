@@ -1,5 +1,5 @@
 .page {
-  min-height: 100vh; /* ocupa toda a tela */
+  min-height: 100vh; 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -26,14 +26,14 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center; /* centraliza a imagem */
+  align-items: center; 
   justify-content: flex-start;
   max-width: 500px;
   margin: 0 auto;
 }
 
 .imageArea img {
-  max-width: 70%; /* imagem mais proporcional */
+  max-width: 70%; 
   height: auto;
   border-radius: 12px;
 }
@@ -41,11 +41,11 @@
 .description {
   margin-top: 1.5rem;
   font-size: 1.05rem;
-  line-height: 1.8; /* espaçamento maior */
+  line-height: 1.8; 
   color: #444;
-  text-align: justify; /* ocupa toda largura */
+  text-align: justify; 
   max-width: 100%;
-  padding: 0 1rem; /* respiro lateral */
+  padding: 0 1rem;
 }
 
 .formArea {
@@ -62,7 +62,7 @@
 }
 
 .logo {
-  width: 140px; /* logo maior */
+  width: 140px;
   margin-bottom: 1rem;
 }
 
@@ -114,7 +114,6 @@
   background: #0f5a3b;
 }
 
-/* Responsividade */
 @media (max-width: 900px) {
   .ouvidoriaContainer {
     flex-direction: column;

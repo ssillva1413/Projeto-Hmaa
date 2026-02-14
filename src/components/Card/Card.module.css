@@ -1,5 +1,5 @@
 .card {
-  flex: 1 1 calc(25% - 1.5rem); /* 4 por linha com gap */
+  flex: 1 1 calc(25% - 1.5rem); 
   max-width: calc(25% - 1.5rem);
   display: flex;
   flex-direction: column;
@@ -52,8 +52,6 @@
 .arrow {
   margin-left: 5px;
 }
-
-/* Responsividade */
 
 @media (max-width: 1200px) {
   .card {

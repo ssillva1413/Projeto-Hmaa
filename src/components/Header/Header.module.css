@@ -1,9 +1,9 @@
 .header {
   position: fixed;
-  top: 40px; /* abaixo do HeaderInfo */
+  top: 40px; 
   left: 0;
   width: 100%;
-  height: 90px; /* AUMENTADO (antes 70px) */
+  height: 90px; 
   background-color: white;
   color: #188E5A;
   z-index: 1000;
@@ -16,15 +16,13 @@
   padding: 0 40px;
 }
 
-/* Logo */
 .logo {
-  height: 80px;      /* AUMENTADO (antes 64px) */
-  max-width: 200px;  /* AUMENTADO */
+  height: 80px;      
+  max-width: 200px; 
   width: auto;
   object-fit: contain;
 }
 
-/* Menu desktop */
 .desktopMenu {
   display: flex;
   gap: 1.2rem;
@@ -33,7 +31,7 @@
 .desktopMenu a {
   color: #188E5A;
   text-decoration: none;
-  font-size: 1rem;  /* leve aumento */
+  font-size: 1rem; 
   font-weight: 500;
 }
 
@@ -41,16 +39,14 @@
   color: #BE3638;
 }
 
-/* Ícone hambúrguer */
 .menuIcon {
   display: none;
-  font-size: 2rem; /* ligeiramente maior */
+  font-size: 2rem; 
   color: #188E5A;
   cursor: pointer;
   z-index: 1201;
 }
 
-/* Drawer lateral */
 .mobileDrawer {
   position: fixed;
   top: 0;
@@ -100,7 +96,6 @@
   color: #BE3638;
 }
 
-/* Overlay */
 .overlay {
   position: fixed;
   top: 0;
@@ -111,7 +106,6 @@
   z-index: 1100;
 }
 
-/* ===== Responsividade ===== */
 @media (max-width: 768px) {
   .desktopMenu {
     display: none;
@@ -122,12 +116,12 @@
   }
 
   .logo {
-    height: 60px;      /* reduzido no mobile */
+    height: 60px;     
     max-width: 160px;
   }
 
   .header {
-    height: 80px; /* header um pouco menor no mobile */
+    height: 80px; 
   }
 }
 

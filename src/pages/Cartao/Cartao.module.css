@@ -1,7 +1,3 @@
-/* ========================================================= */
-/* ======================= BANNER ========================== */
-/* ========================================================= */
-
 .clinicaBanner {
   width: 100%;
   height: 67vh;
@@ -14,7 +10,6 @@
   padding: 0;
   margin-top: -55px;
   padding-top: 155px;
-  background-image: url("estado.jpg");
   background-size: cover;
   background-position: center -240px;
   background-repeat: no-repeat;
@@ -23,6 +18,9 @@
 
 .clinicaBanner img {
   display: none;
+}
+.clinicaBanner {
+  background-image: url("estado.jpg");
 }
 
 .bannerOverlay {
@@ -64,10 +62,6 @@
   max-width: 700px;
 }
 
-/* ========================================================= */
-/* ================= IMAGEM PRINCIPAL ====================== */
-/* ========================================================= */
-
 .clinicaImagemDestaque {
   width: 100%;
   max-width: 1100px;
@@ -82,10 +76,6 @@
   border-radius: 10px;
   object-fit: cover;
 }
-
-/* ========================================================= */
-/* ==================== MINIATURAS ========================= */
-/* ========================================================= */
 
 .thumbsContainer {
   max-width: 900px;
@@ -114,10 +104,6 @@
   height: 100%;
   object-fit: cover;
 }
-
-/* ========================================================= */
-/* =============   SEGUNDA SESSÃO — CARTÃO   ============== */
-/* ========================================================= */
 
 .cartaoSection {
   width: 100%;
@@ -174,13 +160,9 @@
   object-fit: cover;
 }
 
-/* ========================================================= */
-/* ===================== CARD FINAL ======================== */
-/* ========================================================= */
-
 .cardFinal {
   max-width: 1100px;
-  margin: 4rem auto 6rem; /* espaço antes do footer */
+  margin: 4rem auto 6rem;
   padding: 0 20px;
 }
 
@@ -233,10 +215,6 @@
   align-items: center;
 }
 
-/* ========================================================= */
-/* ===================== SESSÃO 3 ========================== */
-/* ========================================================= */
-
 .sessao3 {
   max-width: 1100px;
   margin: 4rem auto;
@@ -288,8 +266,6 @@
   font-weight: 700;
 }
 
-/* ======= NOVO BLOCO — ODONTO E 26 ESPECIALIDADES ======= */
-
 .sessaoOdontoBloco {
   margin-top: 2.5rem;
   display: flex;
@@ -321,9 +297,9 @@
   width: fit-content;
   max-width: 330px;
   display: flex;
-  justify-content: center;   /* Centraliza na horizontal */
-  align-items: center;       /* Centraliza na vertical */
-  text-align: center;        /* Garante quebra de linha centralizada */
+  justify-content: center;  
+  align-items: center;       
+  text-align: center;       
 }
 
 .instagramLink {
@@ -334,12 +310,6 @@
   cursor: pointer;
   display: inline-block;
 }
-
-
-
-/* ========================================================= */
-/* ================== RESPONSIVIDADE ======================= */
-/* ========================================================= */
 
 @media (max-width: 768px) {
   .sessao3Cards {

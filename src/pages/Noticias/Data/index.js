@@ -37,8 +37,6 @@ const noticias = [
     //texto: "Texto aqui"
   //},
   
-  
-  
 ];
 
 export default noticias;

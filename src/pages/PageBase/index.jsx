@@ -8,12 +8,9 @@ function PageBase (){
     return (
         <>
             <HeaderInfo />
-            <Header />
-            
-                <Outlet/>
-           
-                
-            <Footer />
+                <Header />           
+                    <Outlet/>                         
+                <Footer />
         </>
     )
 }

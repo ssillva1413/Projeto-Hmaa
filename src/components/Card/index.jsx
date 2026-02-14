@@ -17,5 +17,4 @@ function Card({ imagem, titulo, data, texto }) {
     </div>
   );
 }
-
 export default Card;

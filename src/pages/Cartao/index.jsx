@@ -2,26 +2,21 @@ import React, { useState } from "react";
 import styles from "./Cartao.module.css";
 
 function Cartao() {
-  const [imagemSelecionada, setImagemSelecionada] = useState("principal.JPEG");
-
+  const [imagemSelecionada, setImagemSelecionada] = useState("principal.webp");
   const imagens = [
-    { id: 1, src: "principal.JPEG", nome: "Miniatura 1" },
-    { id: 2, src: "recepção.JPEG", nome: "Miniatura 2" },
-    { id: 3, src: "bg.JPEG", nome: "Miniatura 3" },
-    { id: 4, src: "consultorio2.JPEG", nome: "Miniatura 4" },
-    { id: 5, src: "consultorio3.JPEG", nome: "Miniatura 5" },
-    { id: 6, src: "coleta.JPEG", nome: "Miniatura 6" },
-    { id: 7, src: "cli.JPEG", nome: "Miniatura 7" },
-    { id: 8, src: "entrada.JPEG", nome: "Miniatura 8" },
+    { id: 1, src: "principal.webp", nome: "Miniatura 1" },
+    { id: 2, src: "recepção.webp", nome: "Miniatura 2" },
+    { id: 3, src: "bg.webp", nome: "Miniatura 3" },
+    { id: 4, src: "consultorio2.webp", nome: "Miniatura 4" },
+    { id: 5, src: "consultorio3.webp", nome: "Miniatura 5" },
+    { id: 6, src: "coleta.webp", nome: "Miniatura 6" },
+    { id: 7, src: "cli.webp", nome: "Miniatura 7" },
+    { id: 8, src: "entrada.webp", nome: "Miniatura 8" },
   ];
 
   return (
     <>
-      {/* ===================== SESSÃO 1 ===================== */}
-      <div
-        className={styles.clinicaBanner}
-        style={{ backgroundImage: `url("estado.jpg")` }}
-      >
+      <div className={styles.clinicaBanner}>
         <div className={styles.bannerOverlay}>
           <div className={styles.bannerContent}>
             <h1>Clínica Casa de Saúde</h1>
@@ -36,9 +31,15 @@ function Cartao() {
         </div>
       </div>
 
-      {/* ========== Imagem principal / Miniaturas ========= */}
       <div className={styles.clinicaImagemDestaque}>
-        <img src={imagemSelecionada} alt="Imagem principal da clínica" />
+        <img
+          src={imagemSelecionada}
+          alt="Imagem principal da clínica"
+          loading="eager"
+          decoding="async"
+          width="1100"
+          height="600"
+        />
       </div>
 
       <div className={styles.thumbsContainer}>
@@ -55,12 +56,18 @@ function Cartao() {
               }
             }}
           >
-            <img src={img.src} alt={img.nome} />
+            <img
+              src={img.src}
+              alt={img.nome}
+              loading="lazy"
+              decoding="async"
+              width="200"
+              height="80"
+            />
           </div>
         ))}
       </div>
 
-      {/* ===================== SESSÃO 2 ===================== */}
       <section className={styles.cartaoSection}>
         <h2 className={styles.cartaoTitulo}>Cuide da sua saúde com economia!</h2>
 
@@ -79,11 +86,17 @@ function Cartao() {
         </div>
 
         <div className={styles.cartaoImagem}>
-          <img src="familia.jpeg" alt="Família Cartão Casa de Saúde" />
+          <img
+            src="familia.jpeg"
+            alt="Família Cartão Casa de Saúde"
+            loading="lazy"
+            decoding="async"
+            width="900"
+            height="600"
+          />
         </div>
       </section>
 
-      {/* ===================== SESSÃO 3 ===================== */}
       <section className={styles.sessao3}>
         <h2 className={styles.sessao3Titulo}>
           Mais descontos, mais saúde ao seu alcance!
@@ -114,22 +127,19 @@ function Cartao() {
             </ul>
           </div>
         </div>
-
-        {/* CARDS ODONTO E 26 ESPECIALIDADES */}
-        <div className={styles.sessaoOdontoBloco}>
-          <div className={styles.cardOdonto}>
-            <p>✔ Agora temos atendimento odontológico disponível todos os dias!</p>
-          </div>
-
-          <div className={styles.cardEspecialidades}>+ de 26 especialidades</div>
-        </div>
       </section>
 
-      {/* ===================== CARD FINAL (MOVIDO) ===================== */}
       <section className={styles.cardFinal}>
         <div className={styles.cardVerdeBottom}>
           <div className={styles.cardLogo}>
-            <img src="logo_cartao.jpeg" alt="Logo Clínica" />
+            <img
+              src="logo_cartao.jpeg"
+              alt="Logo Clínica"
+              loading="lazy"
+              decoding="async"
+              width="120"
+              height="120"
+            />
           </div>
 
           <div className={styles.cardContatos}>
@@ -137,7 +147,7 @@ function Cartao() {
             <p className={styles.whatsapp} style={{ margin: "6px 0" }}>
               (88) 9 9298.7818
             </p>
-            
+
             <p style={{ margin: 0, fontSize: 18 }}>Siga nosso Instagram:</p>
             <a
               href="https://www.instagram.com/clinicacasadesaude/"
@@ -147,14 +157,19 @@ function Cartao() {
             >
               @clinicacasadesaude
             </a>
-
           </div>
 
-           <div className={styles.cardQrCode}>
-          <span className={styles.qrTitulo}>Saiba mais</span>
-          <img src="qrcode.png" alt="QR Code" />
+          <div className={styles.cardQrCode}>
+            <span className={styles.qrTitulo}>Saiba mais</span>
+            <img
+              src="qrcode.png"
+              alt="QR Code"
+              loading="lazy"
+              decoding="async"
+              width="120"
+              height="120"
+            />
           </div>
-
         </div>
       </section>
     </>

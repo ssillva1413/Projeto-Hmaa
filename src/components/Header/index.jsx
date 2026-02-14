@@ -12,12 +12,10 @@ function Header() {
 
   return (
     <header className={styles.header}>
-      {/* Logo */}
       <Link to='/' onClick={() => setMenuOpen(false)}>
         <img src="logo.jpg" alt="Logo" className={styles.logo} />
       </Link>
 
-      {/* Menu desktop */}
       <nav className={styles.desktopMenu}>
         <Link to='/'>HOME</Link>
         <Link to='/sobre'>SOBRE</Link>
@@ -27,12 +25,10 @@ function Header() {
         <Link to='/projetos'>PORTAL DA TRANSPARÊNCIA</Link>
       </nav>
 
-      {/* Ícone hambúrguer (mobile) */}
       <div className={styles.menuIcon} onClick={toggleMenu}>
         <FaBars />
       </div>
 
-      {/* Drawer lateral mobile */}
       <div className={`${styles.mobileDrawer} ${menuOpen ? styles.open : ''}`}>
         <div className={styles.drawerHeader}>
           <FaTimes className={styles.closeIcon} onClick={toggleMenu} />
@@ -47,10 +43,8 @@ function Header() {
         </nav>
       </div>
 
-      {/* Overlay escuro atrás do menu */}
       {menuOpen && <div className={styles.overlay} onClick={toggleMenu}></div>}
     </header>
   );
 }
-
 export default Header;

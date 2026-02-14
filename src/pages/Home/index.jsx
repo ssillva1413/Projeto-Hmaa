@@ -176,7 +176,7 @@ const Home = () => {
         <div className={styles.locationContent}>
           <div className={styles.hospitalImage}>
             <img
-              src="2020-05-12.webp"
+              src="novo.jpeg"
               alt="Hospital e Maternidade Dr. Agenor Araújo"
             />
             <div className={styles.mapOverlay}>

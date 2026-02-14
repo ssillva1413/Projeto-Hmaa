@@ -1,21 +1,20 @@
-/* Efeito de agitação */
 @keyframes shake {
   0%, 100% {
-    transform: rotate(0deg); /* Posição inicial e final */
+    transform: rotate(0deg); 
   }
   20% {
-    transform: rotate(10deg); /* Agitação forte para a direita */
+    transform: rotate(10deg);
   }
   40% {
-    transform: rotate(-10deg); /* Agitação forte para a esquerda */
+    transform: rotate(-10deg);
   }
   60% {
-    transform: rotate(10deg); /* Agitação forte para a direita */
+    transform: rotate(10deg); 
   }
   80% {
-    transform: rotate(-10deg); /* Agitação forte para a esquerda */
+    transform: rotate(-10deg);
   }
-  /* Nos 10 segundos seguintes, o botão ficará parado */
+
 }
 
 .whatsapp {
@@ -34,11 +33,9 @@
   z-index: 1000;
   text-decoration: none;
 
-  /* Animação de agitação: 5s de movimento + 10s de pausa (15s no total) */
   animation: shake 15s ease-in-out infinite;
 }
 
-/* 📱 Responsividade para telas pequenas */
 @media (max-width: 768px) {
   .whatsapp {
     bottom: 15px;

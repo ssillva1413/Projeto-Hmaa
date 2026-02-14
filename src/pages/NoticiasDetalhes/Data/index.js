@@ -103,7 +103,6 @@ const noticias = [
     ],
   },
 
-
   {
     id: 4,
     titulo:
@@ -186,7 +185,7 @@ const noticias = [
         raumatologia e anestésica.`,
       },
       {
-        subtitulo: "Mais investimento em saúde",  // Adiciona o subtítulo aqui
+        subtitulo: "Mais investimento em saúde", 
         tipo:"texto",
         valor:`O Ceará também é contemplado pelo Programa Nacional de Redução de Filas, do Governo Federal, contando com recurso de R$25,9 milhões
          e uma contrapartida estadual no valor de R$7,98 milhões, totalizando R$ 33,88 milhões para 15.900 cirurgias. Com os investimentos das iniciativas 
@@ -206,9 +205,6 @@ const noticias = [
       "Thiago Gaspar - Casa Civil - Foto",
     ],
   },
-
- 
-  
 ];
 
 export default noticias;

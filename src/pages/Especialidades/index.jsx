@@ -35,7 +35,7 @@ function Especialidades() {
     {
       img: "/ortopedia.jpeg",
       alt: "Ortopedia",
-      titulo: "Ortopedia/Traumatologia",
+      titulo: "Traumatologia",
       texto:
         "No Hospital Maternidade Agenor Araújo (HMAA), realizamos cirurgias ortopédicas e traumatológicas para correção de fraturas, lesões ligamentares e articulares, com foco na recuperação funcional e no retorno à qualidade de vida dos pacientes.",
     },
@@ -79,7 +79,6 @@ function Especialidades() {
   return (
     <section
       className={styles.background}
-      /*style={{ backgroundImage: "url('/bg.JPEG')" }}*/
     >
       <div className={styles.fundoTitulo}>
         <h2 className={styles.tituloCinza}>Conheça nossas</h2>
@@ -102,5 +101,4 @@ function Especialidades() {
     </section>
   );
 }
-
 export default Especialidades;

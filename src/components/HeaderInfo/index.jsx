@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 function HeaderInfo() {
   return (
     <div className={styles.headerInfo}>
-      {/* Ouvidoria (lado esquerdo) */}
       <div className={styles.ouvidoria}>
         <FaHeadset className={styles.ouvidoriaIcon} />
         <Link to="/ouvidoria" className={styles.ouvidoriaLink}>
@@ -14,7 +13,6 @@ function HeaderInfo() {
         </Link>
       </div>
 
-      {/* Redes sociais (lado direito) */}
       <div className={styles.socialMedia}>
         <span className={styles.socialText}>Siga nossas redes sociais:</span>
         <a
