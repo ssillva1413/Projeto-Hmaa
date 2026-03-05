@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import axios from "axios";
 import styles from "./TrabalheConosco.module.css";
 
 function TrabalheConosco() {
@@ -8,7 +9,8 @@ function TrabalheConosco() {
   const [telefone, setTelefone] = useState("");
   const [enviado, setEnviado] = useState(false);
   const [captchaToken, setCaptchaToken] = useState(null);
-  const [mensagem, setMensagem] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [progresso, setProgresso] = useState(0);
 
   const recaptchaRef = useRef(null);
   const fileRef = useRef(null);
@@ -18,7 +20,6 @@ function TrabalheConosco() {
   function handleFile(e) {
 
     const file = e.target.files[0];
-
     if (!file) return;
 
     const allowedTypes = [
@@ -70,24 +71,36 @@ function TrabalheConosco() {
       return;
     }
 
+    setLoading(true);
+    setProgresso(0);
+
     const formData = new FormData(e.target);
     formData.append("captchaToken", captchaToken);
 
     try {
 
-      const resp = await fetch(
+      const resp = await axios.post(
         `${import.meta.env.VITE_API_URL}/api/trabalhe-conosco`,
+        formData,
         {
-          method: "POST",
-          body: formData
+          headers: {
+            "Content-Type": "multipart/form-data"
+          },
+
+          onUploadProgress: (progressEvent) => {
+
+            const percent = Math.round(
+              (progressEvent.loaded * 100) / progressEvent.total
+            );
+
+            setProgresso(percent);
+
+          }
         }
       );
 
-      const data = await resp.json();
+      if (resp.status === 200) {
 
-      if (resp.ok) {
-
-        setMensagem(data.message || "Currículo enviado com sucesso ✔");
         setEnviado(true);
 
         e.target.reset();
@@ -97,19 +110,20 @@ function TrabalheConosco() {
         recaptchaRef.current.reset();
         setCaptchaToken(null);
 
-     
         setTimeout(() => {
           window.location.reload();
-        }, 4000);
+        }, 9000);
 
-      } else {
-        alert(data.error || "Erro ao enviar currículo.");
       }
 
     } catch (error) {
+
       console.error(error);
       alert("Erro ao enviar formulário.");
+
     }
+
+    setLoading(false);
 
   }
 
@@ -125,37 +139,33 @@ function TrabalheConosco() {
       <div className={styles.wrapper}>
 
         <div className={styles.left}>
-
           <p>
             Se você acredita que cuidar de pessoas é mais do que uma
             profissão, é uma missão, o Hospital e Maternidade
-            Dr. Agenor Araújo abre as portas para talentos que
-            desejam fazer a diferença todos os dias.
+            Dr. Agenor Araújo abre as portas para talentos
+            que desejam fazer a diferença todos os dias..
           </p>
-
           <p>
             Aqui você encontrará um ambiente de trabalho colaborativo,
-            oportunidades de desenvolvimento e a chance de contribuir
+            oportunidades de desenvolvimento e a chance de contribuir 
             com uma instituição que tem como propósito promover saúde,
-            cuidado e bem-estar à comunidade.
+            cuidado e bem-estar à comunidade. 
           </p>
-
           <p>
-            Cadastre seu currículo em nosso banco de talentos e venha
-            fazer parte da nossa equipe.
+           Cadastre seu currículo em nosso banco de talentos e venha
+           fazer parte da nossa equipe.
           </p>
-
           <p>
             Juntos, cuidamos de vidas.
           </p>
-
+          
         </div>
 
         <div className={styles.right}>
 
           {enviado && (
             <div className={styles.sucesso}>
-              {mensagem}
+              Currículo enviado com sucesso ✔
             </div>
           )}
 
@@ -190,11 +200,7 @@ function TrabalheConosco() {
 
             <div className={styles.inputGroup}>
               <label>ÁREA DE INTERESSE *</label>
-              <textarea
-                name="area"
-                rows="4"
-                required
-              ></textarea>
+              <textarea name="area" rows="4" required></textarea>
             </div>
 
             <div className={styles.inputGroup}>
@@ -227,19 +233,18 @@ function TrabalheConosco() {
             </div>
 
             <div style={{ display: "flex", justifyContent: "center" }}>
-
               <ReCAPTCHA
                 sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
                 onChange={(token) => setCaptchaToken(token)}
                 ref={recaptchaRef}
               />
-
             </div>
 
-            <button className={styles.botao}>
-              Enviar
+            <button className={styles.botao} disabled={loading}>
+              {loading ? "Enviando..." : "Enviar"}
             </button>
 
+            
           </form>
 
         </div>
