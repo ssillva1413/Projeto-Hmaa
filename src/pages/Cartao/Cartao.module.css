@@ -337,12 +337,12 @@
   .bannerOverlay {
     padding-left: 20px;
     padding-right: 20px;
-    align-items: flex-start;   /* joga o conteúdo para a esquerda */
-    text-align: left;          /* texto alinhado à esquerda */
+    align-items: flex-start;  
+    text-align: left;          
   }
 
   .bannerContent {
-    margin-top: 80px; /* mantém ele um pouco mais abaixo */
+    margin-top: 80px; 
   }
 
   .bannerOverlay h1,

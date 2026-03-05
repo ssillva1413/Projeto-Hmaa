@@ -15,9 +15,7 @@ const Footer = () => {
 
   return (
     <footer className={styles.footer}>
-      
       <div className={styles.topContent}>
-        
         <div className={styles.information}>
           <h3>Fale Conosco</h3>
           <p><FaMapMarkerAlt /> Rua Vicente Bezerra da Costa, 338 - São Sebastião, Iguatu-CE</p>
@@ -28,15 +26,23 @@ const Footer = () => {
 
         <div className={styles.navigation}>
           <h3>Navegação</h3>
-          <ul>
-            <li><Link to="/" onClick={(e) => handleLinkClick(e, "/")}>Home</Link></li>
-            <li><Link to="/sobre" onClick={(e) => handleLinkClick(e, "/sobre")}>Sobre</Link></li>
-            <li><Link to="/especialidades" onClick={(e) => handleLinkClick(e, "/especialidades")}>Especialidades</Link></li>
-            <li><Link to="/cartão" onClick={(e) => handleLinkClick(e, "/cartão")}>Clínica</Link></li>
-            <li><Link to="/noticias" onClick={(e) => handleLinkClick(e, "/noticias")}>Notícias</Link></li>
-            <li><Link to="/projetos" onClick={(e) => handleLinkClick(e, "/projetos")}>Portal da Transparência</Link></li>
-           
-          </ul>
+          <div className={styles.navGrid}>
+            <ul>
+              <li><Link to="/" onClick={(e) => handleLinkClick(e, "/")}>Home</Link></li>
+              <li><Link to="/sobre" onClick={(e) => handleLinkClick(e, "/sobre")}>Sobre</Link></li>
+              <li><Link to="/especialidades" onClick={(e) => handleLinkClick(e, "/especialidades")}>Especialidades</Link></li>
+              <li><Link to="/cartao" onClick={(e) => handleLinkClick(e, "/cartao")}>Clínica</Link></li>
+              <li><Link to="/noticias" onClick={(e) => handleLinkClick(e, "/noticias")}>Notícias</Link></li>
+              <li><Link to="/portal-da-transparencia" onClick={(e) => handleLinkClick(e, "/portal-da-transparencia")}>Portal da Transparência</Link></li>
+            </ul>
+            <ul>
+              <li><Link to="/filantropia" onClick={(e) => handleLinkClick(e, "/filantropia")}>Filantropia</Link></li>
+              <li><Link to="/convenios" onClick={(e) => handleLinkClick(e, "/convenios")}>Convênios</Link></li>
+              <li><Link to="/corpo-clinico" onClick={(e) => handleLinkClick(e, "/corpo-clinico")}>Corpo Clínico</Link></li>
+              <li><Link to="/duvidas" onClick={(e) => handleLinkClick(e, "/duvidas")}>Dúvidas Frequentes</Link></li>
+              <li><Link to="/trabalhe-conosco" onClick={(e) => handleLinkClick(e, "/trabalhe-conosco")}>Trabalhe Conosco</Link></li>
+            </ul>
+          </div>
         </div>
 
         <div className={styles.icons}>
@@ -59,27 +65,22 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-
       </div>
 
-         <   div className={styles.logosSection}>
+      <div className={styles.logosSection}>
+        <div className={styles.logosContainer}>
+          <img src="LOGO HMAA1.png" alt="hmaa" />
+          <img src="sec.png" alt="Governo do Estado do Ceará" />
+          <img src="sus.png" alt="SUS" />
+          <img src="especialistas.png" alt="Especialistas" />
+          <img src="LOGO HMAA2.png" alt="Cartão popular" />
+        </div>
 
-          <div className={styles.logosContainer}>
-            <img src="Novo_Logo.png" alt="hmaa" />
-            <img src="sec.png" alt="Governo do Estado do Ceará" />
-            <img src="sus.png" alt="SUS" />
-            <img src="especialistas.png" alt="Especialistas" />
-          {/*   <img src="logo_cartao.png" alt="Cartão popular" />*/}
-           
-          </div>
-
-          <p className={styles.footerBottom}>
-            &copy; {new Date().getFullYear()} Hospital Agenor Araújo — 
-            Desenvolvido por Saulo Silva — Todos os direitos reservados.
-          </p>
-
+        <p className={styles.footerBottom}>
+          &copy; {new Date().getFullYear()} Hospital Agenor Araújo — 
+          Desenvolvido por Saulo Silva — Todos os direitos reservados.
+        </p>
       </div>    
-     
     </footer>
   );
 };

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import styles from "./Ouvidoria.module.css";
 
 function Ouvidoria() {
@@ -9,6 +10,9 @@ function Ouvidoria() {
     descricao: "",
   });
 
+  const [captchaToken, setCaptchaToken] = useState(null);
+  const recaptchaRef = useRef(null);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
@@ -16,25 +20,42 @@ function Ouvidoria() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!captchaToken) {
+      alert("Por favor, confirme que você não é um robô.");
+      return;
+    }
+
     try {
-      const resp = await fetch("http://localhost:5000/api/ouvidoria", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
+      const resp = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/ouvidoria`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...form, captchaToken }),
+        }
+      );
 
       const result = await resp.json();
 
       if (resp.ok) {
         alert(result.message || "Manifestação enviada com sucesso!");
-       
-        setForm({ nome: "", tipo: "", setor: "", descricao: "" });
+
+        setForm({
+          nome: "",
+          tipo: "",
+          setor: "",
+          descricao: "",
+        });
+
+        recaptchaRef.current.reset();
+        setCaptchaToken(null);
       } else {
         alert("Erro: " + (result.error || "Falha ao enviar"));
       }
     } catch (error) {
-      console.error("Erro na requisição:", error);
-      alert("Não foi possível enviar. Verifique sua conexão com o servidor.");
+      console.error("Erro:", error);
+      alert("Erro ao enviar formulário.");
     }
   };
 
@@ -46,10 +67,10 @@ function Ouvidoria() {
         <div className={styles.imageArea}>
           <img src="ouvidoria.png" alt="Atendente da Ouvidoria" />
           <p className={styles.description}>
-            Nossa central de atendimento é o canal aberto para ouvir você. Aqui você pode
-            registrar sugestões, elogios, dúvidas ou reclamações de forma simples
-            e rápida. Sua participação é essencial para que possamos melhorar
-            continuamente os nossos serviços.
+            Nossa central de atendimento é o canal aberto para ouvir você.
+            Aqui você pode registrar sugestões, elogios, dúvidas ou reclamações
+            de forma simples e rápida. Sua participação é essencial para que
+            possamos melhorar continuamente os nossos serviços.
           </p>
         </div>
 
@@ -115,6 +136,14 @@ function Ouvidoria() {
               onChange={handleChange}
             ></textarea>
 
+            <div style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}>
+              <ReCAPTCHA
+                sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                onChange={(token) => setCaptchaToken(token)}
+                ref={recaptchaRef}
+              />
+            </div>
+
             <button type="submit">Enviar</button>
           </form>
         </div>
@@ -122,4 +151,5 @@ function Ouvidoria() {
     </div>
   );
 }
+
 export default Ouvidoria;

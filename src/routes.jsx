@@ -12,6 +12,13 @@ import NoticiasDetalhes from "./pages/NoticiasDetalhes";
 import WhatsAppButton from "./components/WhatsAppButton"; 
 import Ouvidoria from "./pages/Ouvidoria";
 
+import Filantropia from "./pages/Filantropia";
+import Convenios from "./pages/Convenios";
+import CorpoClinico from "./pages/CorpoClinico";
+import Duvidas from "./pages/Duvidas";
+import TrabalheConosco from "./pages/TrabalheConosco";
+
+
 function AppRoutes () {
     return(
        <BrowserRouter>          
@@ -19,14 +26,22 @@ function AppRoutes () {
                    <Routes>
                         <Route path="/" element={<PageBase />}>
                             <Route index element ={<Home />}></Route>
-                            <Route path="/noticias" element ={<Noticias />}></Route>
+                            <Route path="/*" element ={<Page404 />}></Route>
+
+                            <Route path="/ouvidoria" element={<Ouvidoria />} />
+                            
                             <Route path="/sobre" element ={<Sobre />}></Route>
                             <Route path="/especialidades" element ={<Especialidades />}></Route>
-                            <Route path="/projetos" element ={<Projeto />}></Route>
-                            <Route path="/cartão" element ={<Cartao />}></Route>
-                            <Route path="/*" element ={<Page404 />}></Route>
-                            <Route path="/noticias/:id" element={<NoticiasDetalhes />} /> 
-                            <Route path="/ouvidoria" element={<Ouvidoria />} />
+                            <Route path="/filantropia" element={<Filantropia />} />
+                            <Route path="/convenios" element={<Convenios />} />
+                            <Route path="/corpo-clinico" element={<CorpoClinico />} />
+                            <Route path="/duvidas" element={<Duvidas />} />
+                            <Route path="/trabalhe-conosco" element={<TrabalheConosco />} />
+
+                            <Route path="/cartao" element ={<Cartao />}></Route>
+                            <Route path="/noticias" element ={<Noticias />}></Route>
+                            <Route path="/noticias/:id" element={<NoticiasDetalhes />} />                                                   
+                            <Route path="/portal-da-transparencia" element ={<Projeto />}></Route>                                                       
                         </Route>                   
                  </Routes>
                  <WhatsAppButton />                      

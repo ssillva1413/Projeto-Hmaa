@@ -2,16 +2,16 @@ import React, { useState, useEffect } from "react";
 import styles from "./Cartao.module.css";
 
 function Cartao() {
-  const [imagemSelecionada, setImagemSelecionada] = useState("principal.webp");
+  const [imagemSelecionada, setImagemSelecionada] = useState("principal.jpg");
   const imagens = [
-    { id: 1, src: "principal.webp", nome: "Miniatura 1" },
-    { id: 2, src: "recepção.webp", nome: "Miniatura 2" },
-    { id: 3, src: "bg.webp", nome: "Miniatura 3" },
-    { id: 4, src: "consultorio2.webp", nome: "Miniatura 4" },
-    { id: 5, src: "consultorio3.webp", nome: "Miniatura 5" },
-    { id: 6, src: "coleta.webp", nome: "Miniatura 6" },
-    { id: 7, src: "cli.webp", nome: "Miniatura 7" },
-    { id: 8, src: "entrada.webp", nome: "Miniatura 8" },
+    { id: 1, src: "principal.jpg", nome: "Miniatura 1" },
+    { id: 2, src: "recepção.jpg", nome: "Miniatura 2" },
+    { id: 3, src: "bg.JPEG", nome: "Miniatura 3" },
+    { id: 4, src: "consultorio2.JPEG", nome: "Miniatura 4" },
+    { id: 5, src: "consultorio3.JPEG", nome: "Miniatura 5" },
+    { id: 6, src: "coleta.JPEG", nome: "Miniatura 6" },
+    { id: 7, src: "cli.JPEG", nome: "Miniatura 7" },
+    { id: 8, src: "entrada.JPEG", nome: "Miniatura 8" },
   ];
     const [miniaturasVisiveis, setMiniaturasVisiveis] = useState([]);
 
