@@ -33,7 +33,7 @@ function AppRoutes () {
                             <Route path="/sobre" element ={<Sobre />}></Route>
                             <Route path="/especialidades" element ={<Especialidades />}></Route>
                             <Route path="/filantropia" element={<Filantropia />} />
-                            <Route path="/convenios" element={<Convenios />} />
+                            <Route path="/igualdade-salarial" element={<Convenios />} />
                             <Route path="/corpo-clinico" element={<CorpoClinico />} />
                             <Route path="/duvidas" element={<Duvidas />} />
                             <Route path="/trabalhe-conosco" element={<TrabalheConosco />} />

@@ -156,7 +156,7 @@ medicos: [
 {
 nome:"DRA. SUELANI ALVES BEZERRA",
 crm:"14795-CE",
-foto:"suelani.png"
+foto:".png"
 }
 ]
 }
