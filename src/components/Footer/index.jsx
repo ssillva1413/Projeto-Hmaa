@@ -32,11 +32,12 @@ const Footer = () => {
               <li><Link to="/sobre" onClick={(e) => handleLinkClick(e, "/sobre")}>Sobre</Link></li>
               <li><Link to="/especialidades" onClick={(e) => handleLinkClick(e, "/especialidades")}>Especialidades</Link></li>
               <li><Link to="/cartao" onClick={(e) => handleLinkClick(e, "/cartao")}>Clínica</Link></li>
-              <li><Link to="/noticias" onClick={(e) => handleLinkClick(e, "/noticias")}>Notícias</Link></li>           
+              <li><Link to="/noticias" onClick={(e) => handleLinkClick(e, "/noticias")}>Notícias</Link></li>   
+               <li><Link to="/filantropia" onClick={(e) => handleLinkClick(e, "/filantropia")}>Filantropia</Link></li>        
             </ul>
             <ul>
-              <li><Link to="/filantropia" onClick={(e) => handleLinkClick(e, "/filantropia")}>Filantropia</Link></li>
-              {/*<li><Link to="/convenios" onClick={(e) => handleLinkClick(e, "/convenios")}>Convênios</Link></li>*/}
+             
+              <li><Link to="/igualdade-salarial" onClick={(e) => handleLinkClick(e, "/igualdade-salarial")}>Igualdade Salarial</Link></li>
               <li><Link to="/corpo-clinico" onClick={(e) => handleLinkClick(e, "/corpo-clinico")}>Corpo Clínico</Link></li>
               <li><Link to="/duvidas" onClick={(e) => handleLinkClick(e, "/duvidas")}>Dúvidas Frequentes</Link></li>
               <li><Link to="/trabalhe-conosco" onClick={(e) => handleLinkClick(e, "/trabalhe-conosco")}>Trabalhe Conosco</Link></li>
