@@ -12,3 +12,14 @@
   box-sizing: border-box;
 
 }
+/* VLibras ajustes */
+[vw-access-button] .vw-text{
+  font-size:16px !important;
+  bottom:90px !important;
+  right:20px !important;
+}
+
+/* aumentar botão */
+[vw-access-button]{
+  transform:scale(1.1);
+}

@@ -16,7 +16,6 @@ const Home = () => {
     "/carrossel 4.jpeg",
   ];
 
-  // ✅ Troca automática dos banners
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentBanner((prev) => (prev + 1) % banners.length);
@@ -34,7 +33,6 @@ const Home = () => {
     setCurrentBanner((prev) => (prev + 1) % banners.length);
   };
 
-  // ✅ ScrollReveal apenas no card do Cartão
   useEffect(() => {
     ScrollReveal().reveal(`.${styles.promoCard}`, {
       origin: "bottom",
@@ -51,7 +49,6 @@ const Home = () => {
 
   return (
     <>
-      {/* ===== Seção 1: Carrossel ===== */}
       <section className={styles.sectionBanner} ref={bannerRef}>
         <div className={styles.carousel}>
           {banners.map((banner, index) => (
@@ -92,7 +89,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ===== Seção 2: Mensagem + Cartão ===== */}
       <section className={styles.sectionMessage}>
         <div className={styles.messageSection}>
           <div className={styles.message}>
@@ -110,7 +106,7 @@ const Home = () => {
             </h3>
           </div>
 
-          <Link to="/cartão" className={styles.promoCard} ref={promoCardRef}>
+          <Link to="/cartao" className={styles.promoCard} ref={promoCardRef}>
             <div className={styles.promoContent}>
               <h3>
                 Saiba como <br />
@@ -130,7 +126,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ===== Seção 3: Últimas Notícias ===== */}
       <section className={styles.sectionNews}>
         <div className={styles.newsHeader}>
           <div className={styles.newsDivider}>
@@ -160,7 +155,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ===== Seção 4: Localização ===== */}
       <section className={styles.section2}>
         <div className={styles.locationHeader}>
           <div className={styles.sectionDivider}>

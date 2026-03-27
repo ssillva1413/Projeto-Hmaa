@@ -3,17 +3,20 @@ import styles from "./Cartao.module.css";
 
 function Cartao() {
   const [imagemSelecionada, setImagemSelecionada] = useState("principal.jpg");
+
   const imagens = [
-    { id: 1, src: "principal.jpg", nome: "Miniatura 1" },
-    { id: 2, src: "recepção.jpg", nome: "Miniatura 2" },
-    { id: 3, src: "bg.JPEG", nome: "Miniatura 3" },
-    { id: 4, src: "consultorio2.JPEG", nome: "Miniatura 4" },
-    { id: 5, src: "consultorio3.JPEG", nome: "Miniatura 5" },
-    { id: 6, src: "coleta.JPEG", nome: "Miniatura 6" },
-    { id: 7, src: "cli.JPEG", nome: "Miniatura 7" },
+    { id: 1, src: "principal.jpg", nome: "Miniatura 1" },   
+    { id: 2, src: "consultorio2.JPEG", nome: "Miniatura 4" },
+    { id: 3, src: "consultorio3.JPEG", nome: "Miniatura 5" },
+    { id: 4, src: "coleta.JPEG", nome: "Miniatura 6" },
+    { id: 5, src: "cli.JPEG", nome: "Miniatura 7" },
+    { id: 6, src: "recepção.jpg", nome: "Miniatura 2" },
+    { id: 7, src: "bg.JPEG", nome: "Miniatura 3" },
     { id: 8, src: "entrada.JPEG", nome: "Miniatura 8" },
+    { id: 9, src: "estado.jpg", nome: "Miniatura 8" },
   ];
-    const [miniaturasVisiveis, setMiniaturasVisiveis] = useState([]);
+
+  const [miniaturasVisiveis, setMiniaturasVisiveis] = useState([]);
 
   useEffect(() => {
     let index = 0;
@@ -21,7 +24,7 @@ function Cartao() {
       if (index < imagens.length) {
         setMiniaturasVisiveis((visiveis) => [...visiveis, imagens[index]]);
         index++;
-        setTimeout(carregarProxima, 650); 
+        setTimeout(carregarProxima, 650);
       }
     }
     carregarProxima();
@@ -29,9 +32,9 @@ function Cartao() {
 
   return (
     <>
-      <div className={styles.clinicaBanner}>
-        <div className={styles.bannerOverlay}>
-          <div className={styles.bannerContent}>
+      <section className={styles.clinicaTopo}>
+        <div className={styles.clinicaContainer}>
+          <div className={styles.clinicaTexto}>
             <h1>Clínica Casa de Saúde</h1>
             <p>
               A Clínica Casa de Saúde é um anexo do Hospital Maternidade Agenor
@@ -41,7 +44,21 @@ function Cartao() {
               além de exames laboratoriais e suporte clínico.
             </p>
           </div>
+
+          <div className={styles.clinicaInfo}>
+            <h3>Horário de Atendimento</h3>
+            <p><strong>Segunda a Sexta:</strong> 06:30 às 18:00</p>
+            <p><strong>Sábado:</strong> 06:30 às 12:00</p>
+            <p><strong>Domingo:</strong> Fechado</p>
+          </div>
         </div>
+      </section>
+
+      {/* TÍTULO NOVO */}
+      <div className={styles.tituloGaleria}>
+        <span></span>
+        <h2>Conheça a Clínica</h2>
+        <span></span>
       </div>
 
       <div className={styles.clinicaImagemDestaque}>
@@ -50,8 +67,6 @@ function Cartao() {
           alt="Imagem principal da clínica"
           loading="eager"
           decoding="async"
-          width="1100"
-          height="600"
         />
       </div>
 
@@ -61,22 +76,8 @@ function Cartao() {
             key={img.id}
             className={styles.thumb}
             onClick={() => setImagemSelecionada(img.src)}
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                setImagemSelecionada(img.src);
-              }
-            }}
           >
-            <img
-              src={img.src}
-              alt={img.nome}
-              loading="lazy"
-              decoding="async"
-              width="200"
-              height="80"
-            />
+            <img src={img.src} alt={img.nome} loading="lazy" />
           </div>
         ))}
       </div>
@@ -99,14 +100,7 @@ function Cartao() {
         </div>
 
         <div className={styles.cartaoImagem}>
-          <img
-            src="familia.jpeg"
-            alt="Família Cartão Casa de Saúde"
-            loading="lazy"
-            decoding="async"
-            width="900"
-            height="600"
-          />
+          <img src="familia.jpeg" alt="Família Cartão Casa de Saúde" />
         </div>
       </section>
 
@@ -145,23 +139,14 @@ function Cartao() {
       <section className={styles.cardFinal}>
         <div className={styles.cardVerdeBottom}>
           <div className={styles.cardLogo}>
-            <img
-              src="logo_cartao.png"
-              alt="Logo Clínica"
-              loading="lazy"
-              decoding="async"
-              width="120"
-              height="120"
-            />
+            <img src="logo_cartao.png" alt="Logo Clínica" />
           </div>
 
           <div className={styles.cardContatos}>
-            <p style={{ margin: 0, fontSize: 17 }}>Maiores informações:</p>
-            <p className={styles.whatsapp} style={{ margin: "6px 0" }}>
-              (88) 9 9298.7818
-            </p>
+            <p>Maiores informações:</p>
+            <p className={styles.whatsapp}>(88) 9 9298.7818</p>
 
-            <p style={{ margin: 0, fontSize: 18 }}>Siga nosso Instagram:</p>
+            <p>Siga nosso Instagram:</p>
             <a
               href="https://www.instagram.com/clinicacasadesaude/"
               target="_blank"
@@ -174,14 +159,7 @@ function Cartao() {
 
           <div className={styles.cardQrCode}>
             <span className={styles.qrTitulo}>Saiba mais</span>
-            <img
-              src="qrcode.png"
-              alt="QR Code"
-              loading="lazy"
-              decoding="async"
-              width="120"
-              height="120"
-            />
+            <img src="qrcode.png" alt="QR Code" />
           </div>
         </div>
       </section>

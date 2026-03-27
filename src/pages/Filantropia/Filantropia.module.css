@@ -1,9 +1,7 @@
 .container {
   min-height: 100vh;
-  padding: 100px 60px 70px 60px; /* subiu um pouco do header */
+  padding: 100px 60px 70px 60px; 
 }
-
-/* TITULO */
 
 .titleRow {
   display: flex;
@@ -25,21 +23,17 @@
   background-color: #188E5A;
 }
 
-/* TEXTO */
-
 .textContent {
   width: 100%;
-  max-width: 1400px; /* melhora leitura em telas muito grandes */
+  max-width: 1400px; 
   font-size: 18px;
   line-height: 1.8;
   color: #444;
 }
 
 .textContent p {
-  margin-bottom: 14px; /* antes era ~22px */
+  margin-bottom: 14px; 
 }
-
-/* DESTAQUE */
 
 .highlight {
   margin-top: 30px;
@@ -53,7 +47,6 @@
   font-weight: 600;
   color: #188E5A;
 }
-/* ANIMAÇÃO DE ENTRADA */
 
 @keyframes fadeUp {
   from {

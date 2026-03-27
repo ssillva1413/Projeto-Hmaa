@@ -32,15 +32,15 @@ const Footer = () => {
               <li><Link to="/sobre" onClick={(e) => handleLinkClick(e, "/sobre")}>Sobre</Link></li>
               <li><Link to="/especialidades" onClick={(e) => handleLinkClick(e, "/especialidades")}>Especialidades</Link></li>
               <li><Link to="/cartao" onClick={(e) => handleLinkClick(e, "/cartao")}>Clínica</Link></li>
-              <li><Link to="/noticias" onClick={(e) => handleLinkClick(e, "/noticias")}>Notícias</Link></li>
-              <li><Link to="/portal-da-transparencia" onClick={(e) => handleLinkClick(e, "/portal-da-transparencia")}>Portal da Transparência</Link></li>
+              <li><Link to="/noticias" onClick={(e) => handleLinkClick(e, "/noticias")}>Notícias</Link></li>           
             </ul>
             <ul>
               <li><Link to="/filantropia" onClick={(e) => handleLinkClick(e, "/filantropia")}>Filantropia</Link></li>
-              <li><Link to="/convenios" onClick={(e) => handleLinkClick(e, "/convenios")}>Convênios</Link></li>
+              {/*<li><Link to="/convenios" onClick={(e) => handleLinkClick(e, "/convenios")}>Convênios</Link></li>*/}
               <li><Link to="/corpo-clinico" onClick={(e) => handleLinkClick(e, "/corpo-clinico")}>Corpo Clínico</Link></li>
               <li><Link to="/duvidas" onClick={(e) => handleLinkClick(e, "/duvidas")}>Dúvidas Frequentes</Link></li>
               <li><Link to="/trabalhe-conosco" onClick={(e) => handleLinkClick(e, "/trabalhe-conosco")}>Trabalhe Conosco</Link></li>
+              <li><Link to="/portal-da-transparencia" onClick={(e) => handleLinkClick(e, "/portal-da-transparencia")}>Portal da Transparência</Link></li>
             </ul>
           </div>
         </div>
@@ -68,16 +68,34 @@ const Footer = () => {
       </div>
 
       <div className={styles.logosSection}>
-        <div className={styles.logosContainer}>
-          <img src="LOGO HMAA1.png" alt="hmaa" />
-          <img src="sec.png" alt="Governo do Estado do Ceará" />
-          <img src="sus.png" alt="SUS" />
-          <img src="especialistas.png" alt="Especialistas" />
-          <img src="LOGO HMAA2.png" alt="Cartão popular" />
-        </div>
+        <div className={styles.logosSection}>
+  <div className={styles.logosContainer}>
+
+    <div className={styles.logoItem}>
+      <img src="LOGO HMAA1.png" alt="hmaa" />
+    </div>
+
+    <div className={styles.logoItem}>
+      <img src="sec.png" alt="Governo do Estado do Ceará" />
+    </div>
+
+    <div className={styles.logoItem}>
+      <img src="sus.png" alt="SUS" />
+    </div>
+
+    <div className={styles.logoItem}>
+      <img src="especialistas.png" alt="Especialistas" />
+    </div>
+
+    <div className={styles.logoItem}>
+      <img src="LOGO HMAA2.png" alt="Cartão popular" />
+    </div>
+
+  </div>
+</div>
 
         <p className={styles.footerBottom}>
-          &copy; {new Date().getFullYear()} Hospital Agenor Araújo — 
+          &copy; {new Date().getFullYear()} Hospital e Maternidade Dr. Agenor Araújo — 
           Desenvolvido por Saulo Silva — Todos os direitos reservados.
         </p>
       </div>    

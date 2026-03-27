@@ -1,8 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import styles from "./Ouvidoria.module.css";
 
 function Ouvidoria() {
+
   const [form, setForm] = useState({
     nome: "",
     tipo: "",
@@ -11,14 +12,20 @@ function Ouvidoria() {
   });
 
   const [captchaToken, setCaptchaToken] = useState(null);
+  const [enviado, setEnviado] = useState(false);
+
   const recaptchaRef = useRef(null);
+  const sucessoRef = useRef(null);
 
   const handleChange = (e) => {
+
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
+
   };
 
   const handleSubmit = async (e) => {
+
     e.preventDefault();
 
     if (!captchaToken) {
@@ -27,6 +34,7 @@ function Ouvidoria() {
     }
 
     try {
+
       const resp = await fetch(
         `${import.meta.env.VITE_API_URL}/api/ouvidoria`,
         {
@@ -39,7 +47,8 @@ function Ouvidoria() {
       const result = await resp.json();
 
       if (resp.ok) {
-        alert(result.message || "Manifestação enviada com sucesso!");
+
+        setEnviado(true);
 
         setForm({
           nome: "",
@@ -50,106 +59,173 @@ function Ouvidoria() {
 
         recaptchaRef.current.reset();
         setCaptchaToken(null);
+        
+        setTimeout(() => {
+          window.location.reload();
+        }, 10000);
+
       } else {
+
         alert("Erro: " + (result.error || "Falha ao enviar"));
+
       }
+
     } catch (error) {
+
       console.error("Erro:", error);
       alert("Erro ao enviar formulário.");
+
     }
+
   };
 
-  return (
-    <div className={styles.page}>
-      <h1 className={styles.title}>Fale Conosco</h1>
+  useEffect(() => {
+    if (enviado && sucessoRef.current) {
+      sucessoRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+  }, [enviado]);
 
-      <div className={styles.ouvidoriaContainer}>
-        <div className={styles.imageArea}>
-          <img src="ouvidoria.png" alt="Atendente da Ouvidoria" />
-          <p className={styles.description}>
+  return (
+
+    <div className={styles.container}>
+
+      <div className={styles.header}>
+        <h1>FALE CONOSCO</h1>
+        <div className={styles.linha}></div>
+      </div>
+
+      <div className={styles.wrapper}>
+
+        <div className={styles.left}>
+
+          <p>
             Nossa central de atendimento é o canal aberto para ouvir você.
-            Aqui você pode registrar sugestões, elogios, dúvidas ou reclamações
-            de forma simples e rápida. Sua participação é essencial para que
-            possamos melhorar continuamente os nossos serviços.
           </p>
+
+          <p>
+            Aqui você pode registrar sugestões, elogios, dúvidas ou
+            reclamações de forma simples e rápida.
+          </p>
+
+          <p>
+            Sua participação é essencial para que possamos melhorar
+            continuamente os nossos serviços.
+          </p>
+
         </div>
 
-        <div className={styles.formArea}>
-          <img
-            src="Novopage.jpg"
-            alt="Logo do Hospital"
-            className={styles.logo}
-          />
+        <div className={styles.right}>
 
-          <form onSubmit={handleSubmit} className={styles.form}>
-            <label htmlFor="nome">Identificação</label>
-            <input
-              type="text"
-              id="nome"
-              name="nome"
-              placeholder="Digite seu nome (opcional)"
-              value={form.nome}
-              onChange={handleChange}
-            />
+          {enviado && (
+            <div ref={sucessoRef} className={styles.sucesso}>
+              <strong>✔ Manifestação enviada com sucesso</strong>
+              <span>Agradecemos sua participação. Sua opinião é muito importante para nós.</span>
+            </div>
+          )}
 
-            <label htmlFor="tipo">Tipo de Manifestação</label>
-            <select
-              id="tipo"
-              name="tipo"
-              required
-              value={form.tipo}
-              onChange={handleChange}
-            >
-              <option value="">Selecione...</option>
-              <option value="reclamacao">Reclamação</option>
-              <option value="elogio">Elogio</option>
-              <option value="sugestao">Sugestão</option>
-              <option value="denuncia">Denúncia</option>
-              <option value="informacao">Informação</option>
-            </select>
+          <form className={styles.form} onSubmit={handleSubmit}>
 
-            <label htmlFor="setor">Setor</label>
-            <select
-              id="setor"
-              name="setor"
-              required
-              value={form.setor}
-              onChange={handleChange}
-            >
-              <option value="">Selecione...</option>
-              <option value="ambulatorio sus">Ambulatório SUS</option>
-              <option value="ambulatorio part">Ambulatório Particular</option>
-              <option value="internacao">Internação</option>
-              <option value="comercial">Comercial</option>
-              <option value="financeiro">Financeiro</option>
-              <option value="outro">Outro</option>
-            </select>
+            <div className={styles.inputGroup}>
 
-            <label htmlFor="descricao">Descrição</label>
-            <textarea
-              id="descricao"
-              name="descricao"
-              rows="4"
-              placeholder="Descreva sua manifestação"
-              required
-              value={form.descricao}
-              onChange={handleChange}
-            ></textarea>
+              <label>IDENTIFICAÇÃO</label>
 
-            <div style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}>
+              <input
+                type="text"
+                name="nome"
+                placeholder="Digite seu nome (opcional)"
+                value={form.nome}
+                onChange={handleChange}
+              />
+
+            </div>
+
+            <div className={styles.inputGroup}>
+
+              <label>TIPO DE MANIFESTAÇÃO *</label>
+
+              <select
+                name="tipo"
+                required
+                value={form.tipo}
+                onChange={handleChange}
+              >
+
+                <option value="">Selecione...</option>
+                <option value="reclamacao">Reclamação</option>
+                <option value="elogio">Elogio</option>
+                <option value="sugestao">Sugestão</option>
+                <option value="denuncia">Denúncia</option>
+                <option value="informacao">Informação</option>
+
+              </select>
+
+            </div>
+
+            <div className={styles.inputGroup}>
+
+              <label>SETOR *</label>
+
+              <select
+                name="setor"
+                required
+                value={form.setor}
+                onChange={handleChange}
+              >
+
+                <option value="">Selecione...</option>
+                <option value="ambulatorio sus">Ambulatório SUS</option>
+                <option value="ambulatorio part">Ambulatório Particular</option>
+                <option value="internacao">Internação</option>
+                <option value="comercial">Comercial</option>
+                <option value="financeiro">Financeiro</option>
+                <option value="outro">Outro</option>
+
+              </select>
+
+            </div>
+
+            <div className={styles.inputGroup}>
+
+              <label>DESCRIÇÃO *</label>
+
+              <textarea
+                name="descricao"
+                rows="4"
+                placeholder="Descreva sua manifestação"
+                required
+                value={form.descricao}
+                onChange={handleChange}
+              />
+
+            </div>
+
+            <div style={{ display: "flex", justifyContent: "center" }}>
+
               <ReCAPTCHA
                 sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
                 onChange={(token) => setCaptchaToken(token)}
                 ref={recaptchaRef}
               />
+
             </div>
 
-            <button type="submit">Enviar</button>
+            <button className={styles.botao}>
+              Enviar
+            </button>
+
           </form>
+
         </div>
+
       </div>
+
     </div>
+
   );
+
 }
 
 export default Ouvidoria;
