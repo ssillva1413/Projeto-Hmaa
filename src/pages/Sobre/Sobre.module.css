@@ -1,4 +1,3 @@
-/* BASE */
 .sobre{
 width:100%;
 min-height:85vh;
@@ -10,7 +9,6 @@ background:linear-gradient(135deg,#f8f9fa,#e9ecef);
 overflow:hidden;
 }
 
-/* CONTAINER */
 .bio{
 display:flex;
 align-items:center;
@@ -20,8 +18,6 @@ width:90%;
 margin:0 auto;
 }
 
-/* ---------- IMAGEM ---------- */
-
 .imagem{
 flex:1;
 display:flex;
@@ -29,13 +25,12 @@ justify-content:center;
 overflow:hidden;
 border-radius:20px;
 
-/* animação inicial */
+
 opacity:0;
 transform:translateX(-80px);
 transition:all .9s ease;
 }
 
-/* imagem */
 .imagem img{
 width:100%;
 max-width:450px;
@@ -44,28 +39,22 @@ object-fit:cover;
 transition:transform .6s ease;
 }
 
-/* hover premium */
 .imagem:hover img{
 transform:scale(1.07);
 }
 
-/* parallax leve */
 .imagem img{
 will-change:transform;
 }
 
-/* ---------- TEXTO ---------- */
-
 .textos{
 flex:1;
 
-/* animação inicial */
 opacity:0;
 transform:translateX(80px);
 transition:all .9s ease;
 }
 
-/* título */
 .textos h2{
 color:#188E5A;
 font-size:clamp(22px,3vw,34px);
@@ -74,7 +63,6 @@ position:relative;
 padding-bottom:8px;
 }
 
-/* linha */
 .textos h2::after{
 content:"";
 position:absolute;
@@ -86,7 +74,6 @@ background:#188E5A;
 border-radius:2px;
 }
 
-/* parágrafos */
 .textos p{
 font-size:clamp(14px,1.1vw,16px);
 line-height:1.7;
@@ -94,12 +81,9 @@ margin-bottom:16px;
 color:#444;
 text-align:justify;
 
-/* animação stagger */
 opacity:0;
 transform:translateY(20px);
 }
-
-/* ---------- ANIMAÇÕES ATIVAS ---------- */
 
 .show .imagem{
 opacity:1;
@@ -111,7 +95,6 @@ opacity:1;
 transform:translateX(0);
 }
 
-/* stagger (efeito cascata) */
 .show .textos p:nth-child(2){
 animation:fadeUp .6s .2s forwards;
 }
@@ -124,15 +107,12 @@ animation:fadeUp .6s .4s forwards;
 animation:fadeUp .6s .6s forwards;
 }
 
-/* keyframe */
 @keyframes fadeUp{
 to{
 opacity:1;
 transform:translateY(0);
 }
 }
-
-/* ---------- VIDEO ---------- */
 
 .video{
 width:90%;
@@ -172,8 +152,6 @@ border:none;
 border-radius:10px;
 box-shadow:0px 8px 20px rgba(0,0,0,0.15);
 }
-
-/* ---------- RESPONSIVO ---------- */
 
 @media(max-width:900px){
 

@@ -61,7 +61,7 @@ function Header() {
             <Link to='/especialidades' onClick={handleCloseAll}>ESPECIALIDADES</Link>                  
             <Link to='/filantropia' onClick={handleCloseAll}>FILANTROPIA</Link>
            <Link to='/igualdade-salarial' onClick={handleCloseAll}>IGUALDADE SALARIAL</Link>
-            <Link to='/corpo-clinico' onClick={handleCloseAll}>CORPO CLÍNICO</Link>
+            {/*<Link to='/corpo-clinico' onClick={handleCloseAll}>CORPO CLÍNICO</Link>*/}
             <Link to='/duvidas' onClick={handleCloseAll}>DÚVIDAS FREQUENTES</Link>
              <Link to='/trabalhe-conosco' onClick={handleCloseAll}>TRABALHE CONOSCO</Link>
           </div>
@@ -100,7 +100,7 @@ function Header() {
               <Link to='/especialidades' onClick={handleCloseAll}>ESPECIALIDADES</Link>                        
               <Link to='/filantropia' onClick={handleCloseAll}>FILANTROPIA</Link>
               <Link to='/igualdade-salarial' onClick={handleCloseAll}>IGUALDADE SALARIAL</Link>
-              <Link to='/corpo-clinico' onClick={handleCloseAll}>CORPO CLÍNICO</Link>
+              {/*<Link to='/corpo-clinico' onClick={handleCloseAll}>CORPO CLÍNICO</Link>*/}
               <Link to='/duvidas' onClick={handleCloseAll}>DÚVIDAS FREQUENTES</Link> 
               <Link to='/trabalhe-conosco' onClick={handleCloseAll}>TRABALHE CONOSCO</Link>
             </div>

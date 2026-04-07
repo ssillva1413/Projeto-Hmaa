@@ -53,17 +53,17 @@ foto:"gabi.jpeg"
 {
 nome:"DRA. AMABYLLE COSTA PASSOS",
 crm:"28112-CE",
-foto:".png"
+foto:"amabyle.jpeg"
 },
 {
 nome:"DR. MOABE BATISTA DE LIMA",
 crm:"20703-CE",
-foto:".png"
+foto:"moabe.jpeg"
 },
 {
 nome:"DRA. ROSYANE PEREIRA TAVARES",
 crm:"14970-CE",
-foto:".png"
+foto:"rosyane.PNG"
 },
 {
 nome:"DR. JACQUES TAVARES PEREIRA FILHO",
@@ -78,7 +78,17 @@ foto:".png"
 {
 nome:"DR. HELIO FILLIPE DA SILVA FERREIRA",
 crm:"26416-CE",
-foto:".png"
+foto:"helio.jpeg"
+},
+{
+nome:"DR. JOSE RENATO LUCAS",
+crm:"23731-CE",
+foto:"renato.jpeg"
+},
+{
+nome:"DR. NATANAEL ALVES DE LIMA",
+crm:"28816''-CE",
+foto:"natanael.jpeg"
 },
 ]
 },
@@ -209,7 +219,7 @@ container.scrollTo({left:0,behavior:"smooth"});
 },500);
 }
 
-},3000); // velocidade do auto scroll
+},3000); 
 
 });
 

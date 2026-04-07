@@ -10,7 +10,7 @@ function Especialidades() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add(styles.show);
-            observer.unobserve(entry.target); // anima só uma vez
+            observer.unobserve(entry.target); 
           }
         });
       },

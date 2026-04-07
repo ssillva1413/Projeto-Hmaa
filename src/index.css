@@ -12,14 +12,19 @@
   box-sizing: border-box;
 
 }
-/* VLibras ajustes */
-[vw-access-button] .vw-text{
-  font-size:16px !important;
-  bottom:90px !important;
-  right:20px !important;
+
+[vw-access-button] .vw-text {
+  font-size: 16px !important;
+  bottom: 95px !important;
+  right: 20px !important;
 }
 
-/* aumentar botão */
-[vw-access-button]{
-  transform:scale(1.1);
+[vw-access-button] {
+  transform: scale(1.2);
+  transform-origin: bottom right;
+}
+
+[vw-access-button] {
+  filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.3));
+
 }

@@ -17,7 +17,7 @@ dist-ssr
 # Arquivos locais
 *.local
 
-# 🔐 ENV 
+# ENV 
 .env
 .env.*
 .env.local

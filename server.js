@@ -18,19 +18,9 @@ app.use(bodyParser.json());
 
 const RECAPTCHA_SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;
 
-
-// ===================================
-// TESTE API
-// ===================================
-
 app.get("/", (req, res) => {
   res.send("API do Hospital rodando 🚀");
 });
-
-
-// ===================================
-// OUVIDORIA
-// ===================================
 
 app.post("/api/ouvidoria", async (req, res) => {
 
@@ -44,19 +34,9 @@ app.post("/api/ouvidoria", async (req, res) => {
 
 });
 
-
-// ===================================
-// CRIAR PASTA UPLOADS
-// ===================================
-
 if (!fs.existsSync("uploads")) {
   fs.mkdirSync("uploads");
 }
-
-
-// ===================================
-// CONFIGURAÇÃO UPLOAD
-// ===================================
 
 const storage = multer.diskStorage({
 
@@ -93,11 +73,6 @@ const upload = multer({
   fileFilter
 });
 
-
-// ===================================
-// EMAIL
-// ===================================
-
 const transporter = nodemailer.createTransport({
 
   service: "gmail",
@@ -108,11 +83,6 @@ const transporter = nodemailer.createTransport({
   }
 
 });
-
-
-// ===================================
-// TRABALHE CONOSCO
-// ===================================
 
 app.post("/api/trabalhe-conosco", upload.single("curriculo"), async (req, res) => {
 
@@ -145,11 +115,6 @@ app.post("/api/trabalhe-conosco", upload.single("curriculo"), async (req, res) =
 
     console.log("Currículo recebido:", req.file.originalname);
 
-
-    // =========================
-    // ENVIA EMAIL
-    // =========================
-
     await transporter.sendMail({
 
       from: process.env.EMAIL_USER,
@@ -176,11 +141,6 @@ app.post("/api/trabalhe-conosco", upload.single("curriculo"), async (req, res) =
 
     console.log("Email enviado com sucesso");
 
-
-    // =========================
-    // REMOVE ARQUIVO
-    // =========================
-
     fs.unlink(req.file.path, (err) => {
 
       if (err) {
@@ -190,7 +150,6 @@ app.post("/api/trabalhe-conosco", upload.single("curriculo"), async (req, res) =
       }
 
     });
-
 
     res.json({
       message: "Currículo enviado com sucesso ✔"
@@ -207,9 +166,6 @@ app.post("/api/trabalhe-conosco", upload.single("curriculo"), async (req, res) =
   }
 
 });
-
-
-// ===================================
 
 app.listen(PORT, () => {
   console.log(`✅ Servidor rodando na porta ${PORT}`);

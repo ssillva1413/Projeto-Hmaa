@@ -54,7 +54,6 @@ function Cartao() {
         </div>
       </section>
 
-      {/* TÍTULO NOVO */}
       <div className={styles.tituloGaleria}>
         <span></span>
         <h2>Conheça a Clínica</h2>

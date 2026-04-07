@@ -6,8 +6,12 @@ function Convenios() {
       <div className={styles.content}>
 
         <div className={styles.header}>
-          <h1>RELATÓRIO DE TRANSPARÊNCIA</h1>
+          <h1>
+     
+            RELATÓRIO DE TRANSPARÊNCIA
+          </h1>
           <div className={styles.line}></div>
+          <div className={styles.selo}>Transparência 2026</div>
         </div>
 
         <h2>
@@ -31,13 +35,11 @@ function Convenios() {
           de trabalho justo, respeitoso e igualitário para todos os colaboradores.
         </p>
 
-        {/* Destaque estilo filantropia */}
         <div className={styles.highlight}>
           Este relatório reforça o compromisso do HMAA com a equidade, promovendo
           transparência, responsabilidade social e valorização das pessoas.
         </div>
 
-        {/* Botão */}
         <a
           href="/relatorio.pdf"
           target="_blank"
@@ -46,8 +48,6 @@ function Convenios() {
         >
           Baixar Relatório
         </a>
-
-       
 
       </div>
     </div>
