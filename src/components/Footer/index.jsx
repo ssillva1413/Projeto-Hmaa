@@ -76,17 +76,17 @@ const Footer = () => {
       <img src="LOGO HMAA1.png" alt="hmaa" />
     </div>
 
-    <div className={styles.logoItem}>
+    {/*<div className={styles.logoItem}>
       <img src="sec.png" alt="Governo do Estado do Ceará" />
-    </div>
+    </div>*/}
 
-    <div className={styles.logoItem}>
+   {/* <div className={styles.logoItem}>
       <img src="sus.png" alt="SUS" />
-    </div>
+    </div>*/}
 
-    <div className={styles.logoItem}>
+    {/*<div className={styles.logoItem}>
       <img src="especialistas.png" alt="Especialistas" />
-    </div>
+    </div>*/}
 
     <div className={styles.logoItem}>
       <img src="LOGO HMAA2.png" alt="Cartão popular" />
