@@ -15,7 +15,7 @@ function Convenios() {
         </div>
 
         <h2>
-          Igualdade Salarial de Mulheres e Homens – 1º Semestre 2026
+          Igualdade Salarial de Mulheres e Homens – 2º Semestre 2026
         </h2>
 
         <p>
@@ -41,7 +41,7 @@ function Convenios() {
         </div>
 
         <a
-          href="/relatorio.pdf"
+          href="/Igualdade.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.button}
