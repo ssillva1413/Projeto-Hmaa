@@ -41,7 +41,7 @@ const Footer = () => {
               <li><Link to="/duvidas" onClick={(e) => handleLinkClick(e, "/duvidas")}>Dúvidas Frequentes</Link></li>
                <li><Link to="/noticias" onClick={(e) => handleLinkClick(e, "/noticias")}>Notícias</Link></li>
               <li><Link to="/trabalhe-conosco" onClick={(e) => handleLinkClick(e, "/trabalhe-conosco")}>Trabalhe Conosco</Link></li>
-              <li><Link to="/portal-da-transparencia" onClick={(e) => handleLinkClick(e, "/portal-da-transparencia")}>Portal da Transparência</Link></li>
+              <li><Link to="/portal-da-transparencia" onClick={(e) => handleLinkClick(e, "/portal-da-transparencia")}>Emendas Parlamentares</Link></li>
             </ul>
           </div>
         </div>
@@ -76,17 +76,17 @@ const Footer = () => {
       <img src="LOGO HMAA1.png" alt="hmaa" />
     </div>
 
-    {/*<div className={styles.logoItem}>
+    <div className={styles.logoItem}>
       <img src="sec.png" alt="Governo do Estado do Ceará" />
-    </div>*/}
+    </div>
 
-   {/* <div className={styles.logoItem}>
+    <div className={styles.logoItem}>
       <img src="sus.png" alt="SUS" />
-    </div>*/}
+    </div>
 
-    {/*<div className={styles.logoItem}>
+    <div className={styles.logoItem}>
       <img src="especialistas.png" alt="Especialistas" />
-    </div>*/}
+    </div>
 
     <div className={styles.logoItem}>
       <img src="LOGO HMAA2.png" alt="Cartão popular" />
